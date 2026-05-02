@@ -1,0 +1,70 @@
+{
+  "history": [
+    {
+      "date": "2026-04-27",
+      "Rupeeboss": {
+        "calls": 16,
+        "cost": 2.56
+      },
+      "Livealth_Bio_Pharma": {
+        "calls": 18,
+        "cost": 2.88
+      }
+    },
+    {
+      "date": "2026-04-28",
+      "Rupeeboss": {
+        "calls": 16,
+        "cost": 2.56
+      },
+      "Livealth_Bio_Pharma": {
+        "calls": 18,
+        "cost": 2.88
+      }
+    },
+    {
+      "date": "2026-04-29",
+      "Rupeeboss": {
+        "calls": 16,
+        "cost": 2.56
+      },
+      "Livealth_Bio_Pharma": {
+        "calls": 21,
+        "cost": 3.36
+      }
+    },
+    {
+      "date": "2026-04-30",
+      "Rupeeboss": {
+        "calls": 11,
+        "cost": 1.76
+      },
+      "Livealth_Bio_Pharma": {
+        "calls": 21,
+        "cost": 3.36
+      }
+    },
+    {
+      "date": "2026-05-01",
+      "Rupeeboss": {
+        "calls": 9,
+        "cost": 1.44
+      },
+      "Livealth_Bio_Pharma": {
+        "calls": 21,
+        "cost": 3.36
+      }
+    },
+    {
+      "date": "2026-05-02",
+      "Rupeeboss": {
+        "calls": 9,
+        "cost": 1.44
+      },
+      "Livealth_Bio_Pharma": {
+        "calls": 17,
+        "cost": 2.72
+      }
+    }
+  ]
+}

@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenClaw Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        body { 
+            font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif; 
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #2d1b4e 100%);
+            min-height: 100vh;
+            padding: 25px;
+            color: #fff;
+        }
+        
+        /* Header Styles */
+        .dashboard-header {
+            text-align: center;
+            padding: 30px;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        
+        .dashboard-header h1 {
+            font-size: 2.8em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+        
+        .dashboard-header p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95em;
+        }
+        
+        /* Grid Layout */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 20px;
+            max-width: 1600px;
+            margin: 0 auto;
+            height: calc(100vh - 200px);
+        }
+        
+        /* Widget Card Styles */
+        .widget {
+            background: linear-gradient(145deg, rgba(30, 30, 60, 0.9) 0%, rgba(20, 20, 45, 0.95) 100%);
+            border-radius: 20px;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+        
+        .widget::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-color), var(--accent-color-2));
+            opacity: 0.8;
+        }
+        
+        .widget:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+            border-color: rgba(102, 126, 234, 0.4);
+        }
+        
+        /* Widget Header */
+        .widget-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 18px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.02);
+        }
+        
+        .widget-title {
+            font-size: 1em;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+        }
+        
+        .widget-title .icon {
+            font-size: 1.3em;
+            filter: drop-shadow(0 0 8px var(--accent-color));
+        }
+        
+        .widget-link {
+            font-size: 0.75em;
+            color: var(--accent-color);
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 20px;
+            background: rgba(102, 126, 234, 0.15);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+        
+        .widget-link:hover {
+            background: var(--accent-color);
+            color: #fff;
+            transform: scale(1.05);
+        }
+        
+        /* Widget Content */
+        .widget-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 15px;
+            position: relative;
+        }
+        
+        .widget-content::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        .widget-content::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 2px;
+        }
+        
+        .widget-content::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        /* Tooltip Preview */
+        .widget-preview {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(20, 20, 50, 0.98) 0%, rgba(30, 30, 60, 0.98) 100%);
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 10;
+            border-radius: 0 0 20px 20px;
+            overflow-y: auto;
+        }
+        
+        .widget:hover .widget-preview {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: none; /* Let clicks pass through to underlying elements */
+        }
+        
+        .widget-preview {
+            pointer-events: auto; /* But preview itself is clickable */
+        }
+        
+        .preview-title {
+            font-size: 0.9em;
+            font-weight: 600;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .preview-stat {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.85em;
+        }
+        
+        .preview-stat:last-child {
+            border-bottom: none;
+        }
+        
+        .preview-label {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .preview-value {
+            font-weight: 600;
+            color: #fff;
+        }
+        
+        /* Project Items */
+        .project-item {
+            padding: 14px;
+            margin-bottom: 10px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(255, 255, 255, 0.03);
+            transition: all 0.3s;
+        }
+        
+        .project-item:hover {
+            background: rgba(102, 126, 234, 0.1);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+        
+        .project-name {
+            font-weight: 600;
+            margin-bottom: 6px;
+            font-size: 0.95em;
+        }
+        
+        .project-desc {
+            font-size: 0.8em;
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        
+        .project-meta {
+            font-size: 0.7em;
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7em;
+            font-weight: 600;
+            margin-top: 6px;
+        }
+        
+        .status-badge.started { background: linear-gradient(135deg, #f59e0b, #d97706); color: #fff; }
+        .status-badge.progress { background: linear-gradient(135deg, #3b82f6, #2563eb); color: #fff; }
+        .status-badge.executed { background: linear-gradient(135deg, #10b981, #059669); color: #fff; }
+        
+        /* Agent Cards */
+        .agent-card {
+            padding: 14px;
+            margin-bottom: 12px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .agent-name {
+            font-weight: 600;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95em;
+        }
+        
+        .agent-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 8px;
+        }
+        
+        .agent-stat {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 8px;
+            border-radius: 10px;
+        }
+        
+        .agent-stat-value {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .agent-stat-label {
+            font-size: 0.65em;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+            margin-top: 2px;
+        }
+        
+        .total-bar {
+            padding: 12px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 8px;
+        }
+        
+        .total-label {
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        .total-value {
+            font-size: 1.2em;
+            font-weight: 700;
+        }
+        
+        /* Health Widget */
+        .health-status {
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        
+        .health-good { background: linear-gradient(135deg, #10b981, #059669); }
+        .health-warning { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .health-critical { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        
+        .health-score {
+            font-size: 3em;
+            font-weight: 800;
+        }
+        
+        .health-label {
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.9;
+        }
+        
+        .health-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+        }
+        
+        .health-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .health-item-label {
+            font-size: 0.65em;
+            color: rgba(255, 255, 255, 0.5);
+            text-transform: uppercase;
+        }
+        
+        .health-item-value {
+            font-size: 0.95em;
+            font-weight: 600;
+            margin-top: 3px;
+        }
+        
+        /* Cost Items */
+        .cost-day {
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .cost-day.today {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+        
+        .cost-day-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.9em;
+        }
+        
+        .cost-model {
+            font-size: 0.8em;
+            padding: 3px 0;
+            display: flex;
+            justify-content: space-between;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Cron Jobs */
+        .cron-item {
+            padding: 12px;
+            margin-bottom: 8px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            font-family: 'JetBrains Mono', 'Monaco', monospace;
+            font-size: 0.8em;
+            word-break: break-all;
+        }
+        
+        .cron-time {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+        
+        /* Updated Time */
+        .updated-time {
+            font-size: 0.7em;
+            color: rgba(255, 255, 255, 0.3);
+            text-align: right;
+            margin-top: 10px;
+        }
+        
+        /* Footer */
+        .refresh-info {
+            text-align: center;
+            padding: 20px;
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.8em;
+        }
+        
+        /* Widget Color Themes */
+        .widget-projects { --accent-color: #667eea; --accent-color-2: #764ba2; }
+        .widget-health { --accent-color: #10b981; --accent-color-2: #059669; }
+        .widget-elevenlabs { --accent-color: #f59e0b; --accent-color-2: #d97706; }
+        .widget-costs { --accent-color: #ec4899; --accent-color-2: #db2777; }
+        .widget-completed { --accent-color: #8b5cf6; --accent-color-2: #7c3aed; }
+        .widget-cron { --accent-color: #06b6d4; --accent-color-2: #0891b2; }
+        
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .dashboard-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: repeat(3, 1fr);
+                height: auto;
+            }
+            
+            .widget {
+                min-height: 320px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+            
+            body {
+                padding: 15px;
+            }
+            
+            .dashboard-header h1 {
+                font-size: 2em;
+            }
+        }
+        
+        /* Loading Animation */
+        .loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            color: rgba(255, 255, 255, 0.4);
+        }
+        
+        .loading::after {
+            content: '';
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-top-color: var(--accent-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Glow Effect on Hover */
+        .widget:hover .widget-title .icon {
+            animation: pulse 1s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-header">
+        <h1>🤖 OpenClaw Dashboard</h1>
+        <p>Real-time monitoring • Last updated: <span id="last-update">Loading...</span></p>
+    </div>
+
+    <div class="dashboard-grid">
+        <!-- Widget 1: Current Projects -->
+        
+        <div class="widget widget-projects">
+            <div class="widget-header">
+                <div class="widget-title">
+                    <span class="icon">📁</span>
+                    Current Projects
+                </div>
+                <a href="projects.html" target="_blank" class="widget-link">Full View →</a>
+            </div>
+            <div class="widget-content" id="current-projects">
+                <div class="project-item" onclick="window.open('https://livealth-crm.pages.dev', '_blank')">
+                    <div class="project-name">🏥 Livealth CRM</div>
+                    <div class="project-desc">Lead management with login system, summary/transcript views, delete functionality</div>
+                    <div class="project-meta">
+                        <span>✅ Login System</span>
+                        <span>✅ 67 Leads</span>
+                        <span>📅 2026-05-01</span>
+                    </div>
+                </div>
+                <div class="project-item" onclick="window.open('https://rupeeboss-crm.pages.dev', '_blank')">
+                    <div class="project-name">💰 Rupeeboss CRM</div>
+                    <div class="project-desc">174 leads with ElevenLabs transcripts/summaries, admin/user roles</div>
+                    <div class="project-meta">
+                        <span>✅ Login System</span>
+                        <span>✅ 174 Leads</span>
+                        <span>📅 2026-05-01</span>
+                    </div>
+                </div>
+                <div class="project-item" onclick="window.open('https://livealth-crm.pages.dev', '_blank')">
+                    <div class="project-name">🎙️ Voice Agent - Livealth</div>
+                    <div class="project-desc">D-Insights AI agent with 67 leads, cost tracking enabled</div>
+                    <div class="project-meta">
+                        <span>✅ Cost Tracking</span>
+                        <span>📊 67 Leads</span>
+                        <span>📅 2026-04-30</span>
+                    </div>
+                </div>
+                <div class="project-item" onclick="window.open('https://rupeeboss-crm.pages.dev', '_blank')">
+                    <div class="project-name">🎙️ Voice Agent - Rupeeboss</div>
+                    <div class="project-desc">Loan inquiry agent with 174 leads, ElevenLabs API integration</div>
+                    <div class="project-meta">
+                        <span>✅ 154 Conversations</span>
+                        <span>📊 174 Leads</span>
+                        <span>📅 2026-05-01</span>
+                    </div>
+                </div>
+            </div>
+            <div class="widget-preview" id="preview-projects">
+                <div style="color: #667eea; font-size: 0.9em; margin-bottom: 8px;">🚀 All systems operational</div>
+                <div id="preview-projects-stats"></div>
+            </div>
+        </div>
+<div class="widget widget-health">
+            <div class="widget-header">
+                <div class="widget-title">
+                    <span class="icon">🏥</span>
+                    <span>System Health</span>
+                </div>
+                <a href="health.html" target="_blank" class="widget-link">Full View →</a>
+            </div>
+            <div class="widget-content" id="health-status">
+                <div class="loading">Loading</div>
+            </div>
+            <div class="widget-preview" id="preview-health">
+                <div class="preview-title">📈 System Metrics</div>
+                <div id="preview-health-stats"></div>
+            </div>
+        </div>
+
+        <!-- Widget 3: D-insights Voice Agents -->
+        <div class="widget widget-elevenlabs">
+            <div class="widget-header">
+                <div class="widget-title">
+                    <span class="icon">🎙️</span>
+                    <span>D-insights AI Voice Agents</span>
+                </div>
+                <a href="elevenlabs.html" target="_blank" class="widget-link">Full View →</a>
+            </div>
+            <div class="widget-content">
+                <div id="elevenlabs-chart-container" style="height: 80px; margin-bottom: 10px;">
+                    <canvas id="elevenlabs-mini-chart"></canvas>
+                </div>
+                <div id="elevenlabs-widget">
+                    <div class="loading">Loading</div>
+                </div>
+            </div>
+            <div class="widget-preview" id="preview-elevenlabs">
+                <div class="preview-title">🎯 Voice Agent Stats</div>
+                <div id="preview-elevenlabs-stats"></div>
+            </div>
+        </div>
+
+        <!-- Widget 4: LLM Costs -->
+        <div class="widget widget-costs">
+            <div class="widget-header">
+                <div class="widget-title">
+                    <span class="icon">📊</span>
+                    <span>LLM Costs</span>
+                </div>
+                <a href="llmcosts.html" target="_blank" class="widget-link">Full View →</a>
+            </div>
+            <div class="widget-content" id="costs-widget">
+                <div class="loading">Loading</div>
+            </div>
+            <div class="widget-preview" id="preview-costs">
+                <div class="preview-title">💰 Cost Summary</div>
+                <div id="preview-costs-stats"></div>
+            </div>
+        </div>
+
+        <!-- Widget 5: Completed Projects -->
+        <div class="widget widget-completed">
+            <div class="widget-header">
+                <div class="widget-title">
+                    <span class="icon">✅</span>
+                    <span>Completed Projects</span>
+                </div>
+                <a href="projects.html" target="_blank" class="widget-link">Full View →</a>
+            </div>
+            <div class="widget-content" id="completed-projects">
+                <div class="loading">Loading</div>
+            </div>
+            <div class="widget-preview" id="preview-completed">
+                <div class="preview-title">🏆 Completion Stats</div>
+                <div id="preview-completed-stats"></div>
+            </div>
+        </div>
+
+        <!-- Widget 6: Cron Jobs -->
+        <div class="widget widget-cron">
+            <div class="widget-header">
+                <div class="widget-title">
+                    <span class="icon">⏰</span>
+                    <span>Cron Jobs</span>
+                </div>
+                <a href="cron.html" target="_blank" class="widget-link">Full View →</a>
+            </div>
+            <div class="widget-content" id="cron-jobs">
+                <div class="cron-item">
+                    <span class="cron-time">*/5 * * * *</span>
+                    <span class="cron-desc">Health check</span>
+                </div>
+                <div class="cron-item">
+                    <span class="cron-time">30 13 * * *</span>
+                    <span class="cron-desc">LLM cost tracking</span>
+                </div>
+                <div class="cron-item">
+                    <span class="cron-time">0 * * * *</span>
+                    <span class="cron-desc">ElevenLabs polling</span>
+                </div>
+                <div class="cron-item">
+                    <span class="cron-time">30 1 * * *</span>
+                    <span class="cron-desc">Daily AI news</span>
+                </div>
+                <div class="cron-item">
+                    <span class="cron-time">0 * * * *</span>
+                    <span class="cron-desc">Livealth auto-update</span>
+                </div>
+                <div class="cron-item">
+                    <span class="cron-time">35 13 * * *</span>
+                    <span class="cron-desc">LinkedIn auto-post</span>
+                </div>
+                <div class="cron-item" style="border-left: 3px solid #06b6d4;">
+                    <span class="cron-time">0 * * * *</span>
+                    <span class="cron-desc">📝 Memory update (NEW)</span>
+                </div>
+            </div>
+            <div class="widget-preview" id="preview-cron">
+                <div style="color: #06b6d4; font-size: 0.9em; margin-bottom: 8px;">⚙️ 7 active jobs</div>
+                <div id="preview-cron-stats"></div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="refresh-info">
+        Auto-refreshes every 2 minutes • Powered by OpenClaw
+    </div>
+
+    <script>
+        let elevenlabsChart = null;
+        
+        function loadDashboard() {
+            const now = new Date();
+            document.getElementById('last-update').textContent = now.toLocaleTimeString();
+            
+            // Load projects
+            fetch('projects.json')
+                .then(r => r.json())
+                .then(data => {
+                    data.projects.sort((a, b) => new Date(b.last_update) - new Date(a.last_update));
+                    
+                    const currentDiv = document.getElementById('current-projects');
+                    const completedDiv = document.getElementById('completed-projects');
+                    const previewCurrent = document.getElementById('preview-projects-stats');
+                    const previewCompleted = document.getElementById('preview-completed-stats');
+                    
+                    currentDiv.innerHTML = '';
+                    completedDiv.innerHTML = '';
+                    let currentCount = 0, completedCount = 0;
+                    
+                    data.projects.forEach(p => {
+                        const statusClass = p.status === 'Executed' ? 'executed' : p.status === 'In Progress' ? 'progress' : 'started';
+                        const html = `
+                            <div class="project-item">
+                                <div class="project-name">${p.name}</div>
+                                <div class="project-desc">${p.description.substring(0, 60)}...</div>
+                                <span class="status-badge ${statusClass}">${p.status}</span>
+                                <div class="project-meta">Updated: ${p.last_update}</div>
+                            </div>
+                        `;
+                        
+                        if (p.status === 'Executed' || p.status === 'Completed') {
+                            completedDiv.innerHTML += html;
+                            completedCount++;
+                        } else {
+                            currentDiv.innerHTML += html;
+                            currentCount++;
+                        }
+                    });
+                    
+                    if (currentCount === 0) currentDiv.innerHTML = '<div style="text-align: center; padding: 20px; color: rgba(255,255,255,0.3);">No active projects</div>';
+                    if (completedCount === 0) completedDiv.innerHTML = '<div style="text-align: center; padding: 20px; color: rgba(255,255,255,0.3);">No completed projects</div>';
+                    
+                    // Update previews
+                    previewCurrent.innerHTML = `
+                        <div class="preview-stat"><span class="preview-label">Active Projects</span><span class="preview-value">${currentCount}</span></div>
+                        <div class="preview-stat"><span class="preview-label">Total Projects</span><span class="preview-value">${data.projects.length}</span></div>
+                        <div class="preview-stat"><span class="preview-label">Last Update</span><span class="preview-value">${data.projects[0]?.last_update || 'N/A'}</span></div>
+                    `;
+                    previewCompleted.innerHTML = `
+                        <div class="preview-stat"><span class="preview-label">Completed</span><span class="preview-value">${completedCount}</span></div>
+                        <div class="preview-stat"><span class="preview-label">Success Rate</span><span class="preview-value">${data.projects.length > 0 ? Math.round(completedCount/data.projects.length*100) : 0}%</span></div>
+                    `;
+                });
+            
+            // Load cron jobs
+            fetch('cron-jobs.txt')
+                .then(r => r.text())
+                .then(text => {
+                    const lines = text.split('\n').filter(l => l.trim() && !l.startsWith('#'));
+                    const div = document.getElementById('cron-jobs');
+                    const preview = document.getElementById('preview-cron-stats');
+                    
+                    if (lines.length === 0) {
+                        div.innerHTML = '<div style="text-align: center; padding: 20px; color: rgba(255,255,255,0.3);">No cron jobs</div>';
+                    } else {
+                        div.innerHTML = lines.map(l => {
+                            const parts = l.split(' ');
+                            const time = parts.slice(0, 5).join(' ');
+                            const cmd = parts.slice(5).join(' ').substring(0, 40);
+                            return `<div class="cron-item"><span class="cron-time">${time}</span><br>${cmd}...</div>`;
+                        }).join('');
+                        
+                        preview.innerHTML = lines.slice(0, 3).map(l => {
+                            const parts = l.split(' ');
+                            const time = parts.slice(0, 5).join(' ');
+                            return `<div class="preview-stat"><span class="preview-label">${time}</span><span class="preview-value">Active</span></div>`;
+                        }).join('');
+                    }
+                });
+            
+            // Load health status
+            fetch('health.json')
+                .then(r => r.json())
+                .then(data => {
+                    const div = document.getElementById('health-status');
+                    const preview = document.getElementById('preview-health-stats');
+                    const statusClass = data.status === 'good' ? 'health-good' : data.status === 'warning' ? 'health-warning' : 'health-critical';
+                    
+                    div.innerHTML = `
+                        <div class="health-status ${statusClass}">
+                            <div class="health-score">${data.health_score}</div>
+                            <div class="health-label">${data.status.toUpperCase()}</div>
+                        </div>
+                        <div class="health-grid">
+                            <div class="health-item">
+                                <div class="health-item-label">Hostname</div>
+                                <div class="health-item-value">${data.hostname}</div>
+                            </div>
+                            <div class="health-item">
+                                <div class="health-item-label">Uptime</div>
+                                <div class="health-item-value">${data.uptime}</div>
+                            </div>
+                            <div class="health-item">
+                                <div class="health-item-label">Disk</div>
+                                <div class="health-item-value">${data.disk_usage}%</div>
+                            </div>
+                            <div class="health-item">
+                                <div class="health-item-label">Memory</div>
+                                <div class="health-item-value">${data.memory_usage}%</div>
+                            </div>
+                        </div>
+                    `;
+                    
+                    preview.innerHTML = `
+                        <div class="preview-stat"><span class="preview-label">Health Score</span><span class="preview-value">${data.health_score}/100</span></div>
+                        <div class="preview-stat"><span class="preview-label">Gateway</span><span class="preview-value">${data.gateway_running}</span></div>
+                        <div class="preview-stat"><span class="preview-label">Status</span><span class="preview-value">${data.status.toUpperCase()}</span></div>
+                    `;
+                });
+            
+            // Load LLM costs
+            fetch('costs.json')
+                .then(r => r.json())
+                .then(data => {
+                    const div = document.getElementById('costs-widget');
+                    const preview = document.getElementById('preview-costs-stats');
+                    const today = new Date().toISOString().split('T')[0];
+                    let html = '';
+                    let todayCost = 0;
+                    
+                    data.costs.slice(0, 3).forEach(day => {
+                        const isToday = day.date === today;
+                        if (isToday) todayCost = day.total_cost;
+                        html += `
+                            <div class="cost-day ${isToday ? 'today' : ''}">
+                                <div class="cost-day-header">
+                                    <span>${isToday ? '✅ Today' : day.date}</span>
+                                    <span>$${day.total_cost.toFixed(4)}</span>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    
+                    div.innerHTML = html || '<div style="text-align: center; padding: 20px; color: rgba(255,255,255,0.3);">No cost data</div>';
+                    
+                    const totalCost = data.costs.reduce((sum, d) => sum + d.total_cost, 0);
+                    preview.innerHTML = `
+                        <div class="preview-stat"><span class="preview-label">Today's Cost</span><span class="preview-value">$${todayCost.toFixed(4)}</span></div>
+                        <div class="preview-stat"><span class="preview-label">4-Day Total</span><span class="preview-value">$${totalCost.toFixed(4)}</span></div>
+                        <div class="preview-stat"><span class="preview-label">Models Used</span><span class="preview-value">${data.costs[0]?.models.length || 0}</span></div>
+                    `;
+                });
+            
+            // Load D-insights costs with chart
+            Promise.all([
+                fetch('elevenlabs_costs.json').then(r => r.json()),
+                fetch('elevenlabs_history.json').then(r => r.json()).catch(() => ({history: []}))
+            ]).then(([data, historyData]) => {
+                const div = document.getElementById('elevenlabs-widget');
+                const preview = document.getElementById('preview-elevenlabs-stats');
+                let html = '';
+                
+                if (data.agents) {
+                    for (const [name, agent] of Object.entries(data.agents)) {
+                        const cardClass = name.includes('Livealth') ? 'livealth' : 'rupeeboss';
+                        const displayName = name.replace(/_/g, ' ');
+                        html += `
+                            <div class="agent-card">
+                                <div class="agent-name">
+                                    ${cardClass === 'rupeeboss' ? '🏦' : '💊'} ${displayName}
+                                </div>
+                                <div class="agent-stats">
+                                    <div class="agent-stat">
+                                        <div class="agent-stat-value">${agent.calls}</div>
+                                        <div class="agent-stat-label">Calls</div>
+                                    </div>
+                                    <div class="agent-stat">
+                                        <div class="agent-stat-value">${agent.minutes}</div>
+                                        <div class="agent-stat-label">Min</div>
+                                    </div>
+                                    <div class="agent-stat">
+                                        <div class="agent-stat-value">$${parseFloat(agent.cost).toFixed(2)}</div>
+                                        <div class="agent-stat-label">Cost</div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                }
+                
+                if (data.totals) {
+                    html += `
+                        <div class="total-bar">
+                            <span class="total-label">💰 Total</span>
+                            <span class="total-value">$${parseFloat(data.totals.cost).toFixed(2)}</span>
+                        </div>
+                    `;
+                }
+                
+                if (data.last_updated) {
+                    html += `<div class="updated-time">Updated: ${data.last_updated}</div>`;
+                }
+                
+                div.innerHTML = html || '<div style="text-align: center; padding: 20px; color: rgba(255,255,255,0.3);">No data</div>';
+                
+                // Update preview
+                preview.innerHTML = `
+                    <div class="preview-stat"><span class="preview-label">Total Calls</span><span class="preview-value">${data.totals?.calls || 0}</span></div>
+                    <div class="preview-stat"><span class="preview-label">Total Cost</span><span class="preview-value">$${parseFloat(data.totals?.cost || 0).toFixed(2)}</span></div>
+                    <div class="preview-stat"><span class="preview-label">History Days</span><span class="preview-value">${historyData.history?.length || 0}</span></div>
+                `;
+                
+                // Draw mini chart
+                if (historyData.history && historyData.history.length > 0) {
+                    const labels = historyData.history.slice(-7).map(h => h.date.split('-').slice(1).join('/'));
+                    const rupeebossData = historyData.history.slice(-7).map(h => h.Rupeeboss?.calls || 0);
+                    const livealthData = historyData.history.slice(-7).map(h => h.Livealth_Bio_Pharma?.calls || 0);
+                    
+                    if (elevenlabsChart) elevenlabsChart.destroy();
+                    
+                    elevenlabsChart = new Chart(document.getElementById('elevenlabs-mini-chart'), {
+                        type: 'bar',
+                        data: {
+                            labels: labels,
+                            datasets: [
+                                { label: 'Rupeeboss', data: rupeebossData, backgroundColor: '#667eea', borderRadius: 3 },
+                                { label: 'Livealth', data: livealthData, backgroundColor: '#f59e0b', borderRadius: 3 }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: { legend: { display: false } },
+                            scales: {
+                                x: { grid: { display: false }, ticks: { color: 'rgba(255,255,255,0.5)', font: { size: 9 } } },
+                                y: { beginAtZero: true, ticks: { stepSize: 5, color: 'rgba(255,255,255,0.5)', font: { size: 9 } }, grid: { color: 'rgba(255,255,255,0.05)' } }
+                            }
+                        }
+                    });
+                }
+            });
+        }
+        
+        loadDashboard();
+        setInterval(loadDashboard, 120000); // 2 minutes
+    </script>
+</body>
+</html>

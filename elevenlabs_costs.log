@@ -1,0 +1,1101 @@
+[Mon Apr 27 04:42:05 UTC 2026] Starting ElevenLabs cost poll...
+[2026-04-27 04:42:05] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Agent info response code: 404
+  Agent info body: {"detail":"Not Found"}
+  Conversations response code: 404
+  Conversations body: {"detail":"Not Found"}
+  Using fallback/0 for calls
+  Result: calls=0, estimated_minutes=0, cost=26406estimated_cost
+  Livealth_Bio_Pharma: 0 calls, $0, 0 minutes
+[2026-04-27 04:42:06] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Agent info response code: 404
+  Agent info body: {"detail":"Not Found"}
+  Conversations response code: 404
+  Conversations body: {"detail":"Not Found"}
+  Using fallback/0 for calls
+  Result: calls=0, estimated_minutes=0, cost=26406estimated_cost
+  Rupeeboss: 0 calls, $0, 0 minutes
+[Mon Apr 27 04:42:07 UTC 2026] Done. Saved to /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+[2026-04-27 04:42:07] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Agent info response code: 404
+  Agent info body: {"detail":"Not Found"}
+  Conversations response code: 404
+  Conversations body: {"detail":"Not Found"}
+  Using fallback/0 for calls
+  Result: calls=0, estimated_minutes=0, cost=26406estimated_cost
+[2026-04-27 04:42:08] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Agent info response code: 404
+  Agent info body: {"detail":"Not Found"}
+  Conversations response code: 404
+  Conversations body: {"detail":"Not Found"}
+  Using fallback/0 for calls
+  Result: calls=0, estimated_minutes=0, cost=26406estimated_cost
+[2026-04-27 04:42:38] Starting ElevenLabs cost poll...
+[2026-04-27 04:42:38] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Conversations response code: 404
+  Conversations body: {"detail":"Not Found"}
+  Using 0 for calls
+  Result: calls=0, estimated_minutes=0, cost=26581estimated_cost
+  Livealth_Bio_Pharma: 0 calls, $0, 0 minutes
+[2026-04-27 04:42:38] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Conversations response code: 404
+  Conversations body: {"detail":"Not Found"}
+  Using 0 for calls
+  Result: calls=0, estimated_minutes=0, cost=26581estimated_cost
+  Rupeeboss: 0 calls, $0, 0 minutes
+[2026-04-27 04:42:39] Done. Saved to /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+[2026-04-27 04:42:39] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Conversations response code: 404
+  Conversations body: {"detail":"Not Found"}
+  Using 0 for calls
+  Result: calls=0, estimated_minutes=0, cost=26581estimated_cost
+[2026-04-27 04:42:39] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Conversations response code: 404
+  Conversations body: {"detail":"Not Found"}
+  Using 0 for calls
+  Result: calls=0, estimated_minutes=0, cost=26581estimated_cost
+[2026-04-27 04:44:09] Starting ElevenLabs cost poll...
+[2026-04-27 04:44:09] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Response code: 404
+  API returned error or no data, using 0
+  Result: calls=0, cost=26735estimated_cost
+[2026-04-27 04:44:10] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Response code: 404
+  API returned error or no data, using 0
+  Result: calls=0, cost=26735estimated_cost
+[2026-04-27 04:44:10] Saved to /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+[2026-04-27 04:44:10] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Response code: 404
+  API returned error or no data, using 0
+  Result: calls=0, cost=26735estimated_cost
+[2026-04-27 04:44:10] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Response code: 404
+  API returned error or no data, using 0
+  Result: calls=0, cost=26735estimated_cost
+[2026-04-27 04:46:22] Starting ElevenLabs cost poll...
+[2026-04-27 04:46:22] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Response code: 404
+  API returned error or no data, using 0
+  Result: calls=0, cost=27099estimated_cost
+[2026-04-27 04:46:23] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Response code: 404
+  API returned error or no data, using 0
+  Result: calls=0, cost=27099estimated_cost
+[2026-04-27 04:46:23] Saved to /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+[2026-04-27 04:46:23] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Response code: 404
+  API returned error or no data, using 0
+  Result: calls=0, cost=27099estimated_cost
+[2026-04-27 04:46:23] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Response code: 404
+  API returned error or no data, using 0
+  Result: calls=0, cost=27099estimated_cost
+[2026-04-27 04:48:04] Starting ElevenLabs cost poll...
+[2026-04-27 04:48:04] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Response code: 200
+  API returned error, using 0 calls
+  Result: calls=0, cost=27266estimated_cost, last_call=
+[2026-04-27 04:48:05] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Response code: 200
+  API returned error, using 0 calls
+  Result: calls=0, cost=27266estimated_cost, last_call=
+[2026-04-27 04:48:05] Saved to /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+[2026-04-27 04:48:05] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Response code: 200
+  API returned error, using 0 calls
+  Result: calls=0, cost=27266estimated_cost, last_call=
+[2026-04-27 04:48:06] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Response code: 200
+  API returned error, using 0 calls
+  Result: calls=0, cost=27266estimated_cost, last_call=
+[2026-04-27 04:49:23] Starting ElevenLabs cost poll...
+[2026-04-27 04:49:23] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Response code: 200
+  Agent not found in list, using 0
+  Result: calls=0, cost=27482estimated_cost
+[2026-04-27 04:49:24] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Response code: 200
+  Agent not found in list, using 0
+  Result: calls=0, cost=27482estimated_cost
+[2026-04-27 04:49:24] Saved to /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+[2026-04-27 04:49:24] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Response code: 200
+  Agent not found in list, using 0
+  Result: calls=0, cost=27482estimated_cost
+[2026-04-27 04:49:25] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Response code: 200
+  Agent not found in list, using 0
+  Result: calls=0, cost=27482estimated_cost
+[2026-04-27 04:50:09] Starting ElevenLabs cost poll...
+[2026-04-27 04:50:09] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Found 16 calls for this agent
+  Result: calls=16, cost=27644estimated_cost
+[2026-04-27 04:50:10] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Found 13 calls for this agent
+  Result: calls=13, cost=27644estimated_cost
+[2026-04-27 04:50:10] Saved to /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+[2026-04-27 04:50:10] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Found 16 calls for this agent
+  Result: calls=16, cost=27644estimated_cost
+[2026-04-27 04:50:11] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Found 13 calls for this agent
+  Result: calls=13, cost=27644estimated_cost
+[2026-04-27 05:00:01] Starting ElevenLabs cost poll...
+[2026-04-27 05:00:01] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Found 16 calls for this agent
+  Result: calls=16, cost=27834estimated_cost
+[2026-04-27 05:00:01] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Found 13 calls for this agent
+  Result: calls=13, cost=27834estimated_cost
+[2026-04-27 05:00:02] Saved to /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+=== ElevenLabs Voice Agent Stats ===
+Last Updated: 2026-04-27T05:00:01
+
+[2026-04-27 05:00:02] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Found 16 calls for this agent
+  Result: calls=16, cost=27834estimated_cost
+  Livealth_Bio_Pharma:
+    Calls (7 days): 16
+    Est. Cost: $2.56
+    Est. Minutes: 32
+
+[2026-04-27 05:00:03] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Found 13 calls for this agent
+  Result: calls=13, cost=27834estimated_cost
+  Rupeeboss:
+    Calls (7 days): 13
+    Est. Cost: $2.08
+    Est. Minutes: 26
+
+Total: 29 calls, $4.64
+[2026-04-27 06:00:01] Starting ElevenLabs cost poll...
+[2026-04-27 06:00:01] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Found 15 calls for this agent
+  Result: calls=15, cost=28024estimated_cost
+[2026-04-27 06:00:02] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Found 13 calls for this agent
+  Result: calls=13, cost=28024estimated_cost
+[2026-04-27 06:00:03] Saved to /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+=== ElevenLabs Voice Agent Stats ===
+Last Updated: 2026-04-27T06:00:01
+
+[2026-04-27 06:00:03] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Found 15 calls for this agent
+  Result: calls=15, cost=28024estimated_cost
+  Livealth_Bio_Pharma:
+    Calls (7 days): 15
+    Est. Cost: $2.40
+    Est. Minutes: 30
+
+[2026-04-27 06:00:03] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Found 13 calls for this agent
+  Result: calls=13, cost=28024estimated_cost
+  Rupeeboss:
+    Calls (7 days): 13
+    Est. Cost: $2.08
+    Est. Minutes: 26
+
+Total: 28 calls, $4.48
+[2026-04-27 07:00:01] Starting ElevenLabs cost poll...
+[2026-04-27 07:00:01] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Found 15 calls for this agent
+  Result: calls=15, cost=28883estimated_cost
+[2026-04-27 07:00:01] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Found 13 calls for this agent
+  Result: calls=13, cost=28883estimated_cost
+[2026-04-27 07:00:03] Saved to /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+=== ElevenLabs Voice Agent Stats ===
+Last Updated: 2026-04-27T07:00:01
+
+[2026-04-27 07:00:03] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Found 15 calls for this agent
+  Result: calls=15, cost=28883estimated_cost
+  Livealth_Bio_Pharma:
+    Calls (7 days): 15
+    Est. Cost: $2.40
+    Est. Minutes: 30
+
+[2026-04-27 07:00:03] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Found 13 calls for this agent
+  Result: calls=13, cost=28883estimated_cost
+  Rupeeboss:
+    Calls (7 days): 13
+    Est. Cost: $2.08
+    Est. Minutes: 26
+
+Total: 28 calls, $4.48
+[2026-04-27 07:53:35] Starting ElevenLabs cost poll...
+[2026-04-27 07:53:35] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Found 15 calls for this agent
+  Result: calls=15, cost=29468estimated_cost
+[2026-04-27 07:53:35] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Found 13 calls for this agent
+  Result: calls=13, cost=29468estimated_cost
+[2026-04-27 07:53:36] Saved to /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+[2026-04-27 07:53:36] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Found 15 calls for this agent
+  Result: calls=15, cost=29468estimated_cost
+[2026-04-27 07:53:36] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Found 13 calls for this agent
+  Result: calls=13, cost=29468estimated_cost
+[2026-04-27 07:54:08] Starting ElevenLabs cost poll...
+[2026-04-27 07:54:08] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Found 15 calls
+[2026-04-27 07:54:08] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Found 13 calls
+[2026-04-27 07:54:09] Saved to /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+[2026-04-27 07:54:09] Checking Livealth_Bio_Pharma (agent_7601k8ms1yhqf19tk684c03bfbst)...
+  Found 15 calls
+[2026-04-27 07:54:09] Checking Rupeeboss (gKNyAo0UhrdRiQ7FAWVZ)...
+  Found 13 calls
+[2026-04-27T07:54:49] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+[2026-04-27T07:57:16] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+[2026-04-27T08:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 1 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 14 calls, $2.24, 28 min
+Livealth: 15 calls, $2.40, 30 min
+Total: 29 calls, $4.64
+[2026-04-27T09:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 1 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 14 calls, $2.24, 28 min
+Livealth: 16 calls, $2.56, 32 min
+Total: 30 calls, $4.80
+[2026-04-27T10:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 1 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 14 calls, $2.24, 28 min
+Livealth: 16 calls, $2.56, 32 min
+Total: 30 calls, $4.80
+[2026-04-27T11:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 1 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 14 calls, $2.24, 28 min
+Livealth: 16 calls, $2.56, 32 min
+Total: 30 calls, $4.80
+[2026-04-27T12:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 1 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 15 calls, $2.40, 30 min
+Livealth: 16 calls, $2.56, 32 min
+Total: 31 calls, $4.96
+[2026-04-27T13:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 1 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 15 calls, $2.40, 30 min
+Livealth: 17 calls, $2.72, 34 min
+Total: 32 calls, $5.12
+[2026-04-27T14:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 1 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 17 calls, $2.72, 34 min
+Total: 33 calls, $5.28
+[2026-04-27T15:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 1 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 17 calls, $2.72, 34 min
+Total: 33 calls, $5.28
+[2026-04-27T16:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 1 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 17 calls, $2.72, 34 min
+Total: 33 calls, $5.28
+[2026-04-27T17:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 1 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 17 calls, $2.72, 34 min
+Total: 33 calls, $5.28
+[2026-04-27T18:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 1 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 17 calls, $2.72, 34 min
+Total: 33 calls, $5.28
+[2026-04-27T19:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 1 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 17 calls, $2.72, 34 min
+Total: 33 calls, $5.28
+[2026-04-27T20:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 1 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-27T21:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 1 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-27T22:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 1 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-27T23:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 1 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-28T00:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-28T01:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-28T02:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-28T03:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-28T04:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-28T05:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-28T06:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-28T07:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-28T08:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-28T09:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-28T10:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-28T11:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-28T12:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-28T13:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-28T14:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-28T15:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-28T16:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-28T17:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-28T18:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-28T19:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-28T20:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-28T21:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 17 calls, $2.72, 34 min
+Total: 33 calls, $5.28
+[2026-04-28T22:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 17 calls, $2.72, 34 min
+Total: 33 calls, $5.28
+[2026-04-28T23:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 2 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-29T00:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-29T01:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-29T02:00:02] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-29T03:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-29T04:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-29T05:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-29T06:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-29T07:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-29T08:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-29T09:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-29T10:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 37 calls, $5.92
+[2026-04-29T11:00:01] Polling ElevenLabs...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== ElevenLabs Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 37 calls, $5.92
+[2026-04-29T12:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 37 calls, $5.92
+[2026-04-29T13:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 37 calls, $5.92
+[2026-04-29T14:00:02] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 37 calls, $5.92
+[2026-04-29T15:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 37 calls, $5.92
+[2026-04-29T16:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 37 calls, $5.92
+[2026-04-29T17:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 37 calls, $5.92
+[2026-04-29T18:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 37 calls, $5.92
+[2026-04-29T19:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 37 calls, $5.92
+[2026-04-29T20:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 37 calls, $5.92
+[2026-04-29T21:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 37 calls, $5.92
+[2026-04-29T22:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 37 calls, $5.92
+[2026-04-29T23:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 3 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 37 calls, $5.92
+[2026-04-30T00:00:02] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 37 calls, $5.92
+[2026-04-30T01:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 37 calls, $5.92
+[2026-04-30T02:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 37 calls, $5.92
+[2026-04-30T03:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 37 calls, $5.92
+[2026-04-30T04:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 37 calls, $5.92
+[2026-04-30T05:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 37 calls, $5.92
+[2026-04-30T06:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 37 calls, $5.92
+[2026-04-30T07:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-30T08:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-30T09:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-30T10:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-30T11:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 16 calls, $2.56, 32 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 34 calls, $5.44
+[2026-04-30T12:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 29 calls, $4.64
+[2026-04-30T13:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 18 calls, $2.88, 36 min
+Total: 29 calls, $4.64
+[2026-04-30T14:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 19 calls, $3.04, 38 min
+Total: 30 calls, $4.80
+[2026-04-30T15:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 19 calls, $3.04, 38 min
+Total: 30 calls, $4.80
+[2026-04-30T16:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 19 calls, $3.04, 38 min
+Total: 30 calls, $4.80
+[2026-04-30T17:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 19 calls, $3.04, 38 min
+Total: 30 calls, $4.80
+[2026-04-30T18:00:02] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 32 calls, $5.12
+[2026-04-30T19:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 32 calls, $5.12
+[2026-04-30T20:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 32 calls, $5.12
+[2026-04-30T21:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 32 calls, $5.12
+[2026-04-30T22:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 32 calls, $5.12
+[2026-04-30T23:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 4 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 32 calls, $5.12
+[2026-05-01T00:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 32 calls, $5.12
+[2026-05-01T01:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 32 calls, $5.12
+[2026-05-01T02:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 32 calls, $5.12
+[2026-05-01T03:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 32 calls, $5.12
+[2026-05-01T04:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 32 calls, $5.12
+[2026-05-01T05:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 32 calls, $5.12
+[2026-05-01T06:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 32 calls, $5.12
+[2026-05-01T07:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 32 calls, $5.12
+[2026-05-01T08:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 32 calls, $5.12
+[2026-05-01T09:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 32 calls, $5.12
+[2026-05-01T10:00:02] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 32 calls, $5.12
+[2026-05-01T11:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 11 calls, $1.76, 22 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 32 calls, $5.12
+[2026-05-01T12:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 9 calls, $1.44, 18 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 30 calls, $4.80
+[2026-05-01T13:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 9 calls, $1.44, 18 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 30 calls, $4.80
+[2026-05-01T14:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 9 calls, $1.44, 18 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 30 calls, $4.80
+[2026-05-01T15:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 9 calls, $1.44, 18 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 30 calls, $4.80
+[2026-05-01T16:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 9 calls, $1.44, 18 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 30 calls, $4.80
+[2026-05-01T17:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 9 calls, $1.44, 18 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 30 calls, $4.80
+[2026-05-01T18:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 9 calls, $1.44, 18 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 30 calls, $4.80
+[2026-05-01T19:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 9 calls, $1.44, 18 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 30 calls, $4.80
+[2026-05-01T20:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 9 calls, $1.44, 18 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 30 calls, $4.80
+[2026-05-01T21:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 9 calls, $1.44, 18 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 30 calls, $4.80
+[2026-05-01T22:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 9 calls, $1.44, 18 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 30 calls, $4.80
+[2026-05-01T23:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 5 entries
+=== D-insights Stats ===
+Rupeeboss: 9 calls, $1.44, 18 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 30 calls, $4.80
+[2026-05-02T00:00:02] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 6 entries
+=== D-insights Stats ===
+Rupeeboss: 9 calls, $1.44, 18 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 30 calls, $4.80
+[2026-05-02T01:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 6 entries
+=== D-insights Stats ===
+Rupeeboss: 9 calls, $1.44, 18 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 30 calls, $4.80
+[2026-05-02T02:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 6 entries
+=== D-insights Stats ===
+Rupeeboss: 9 calls, $1.44, 18 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 30 calls, $4.80
+[2026-05-02T03:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 6 entries
+=== D-insights Stats ===
+Rupeeboss: 9 calls, $1.44, 18 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 30 calls, $4.80
+[2026-05-02T04:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 6 entries
+=== D-insights Stats ===
+Rupeeboss: 9 calls, $1.44, 18 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 30 calls, $4.80
+[2026-05-02T05:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 6 entries
+=== D-insights Stats ===
+Rupeeboss: 9 calls, $1.44, 18 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 30 calls, $4.80
+[2026-05-02T06:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 6 entries
+=== D-insights Stats ===
+Rupeeboss: 9 calls, $1.44, 18 min
+Livealth: 21 calls, $3.36, 42 min
+Total: 30 calls, $4.80
+[2026-05-02T07:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 6 entries
+=== D-insights Stats ===
+Rupeeboss: 9 calls, $1.44, 18 min
+Livealth: 17 calls, $2.72, 34 min
+Total: 26 calls, $4.16
+[2026-05-02T08:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 6 entries
+=== D-insights Stats ===
+Rupeeboss: 9 calls, $1.44, 18 min
+Livealth: 17 calls, $2.72, 34 min
+Total: 26 calls, $4.16

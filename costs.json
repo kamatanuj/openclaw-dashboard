@@ -1,0 +1,186 @@
+{
+  "costs": [
+    {
+      "date": "2026-04-27",
+      "models": [
+        {
+          "model": "ollama/gemma3:12b",
+          "calls": 13,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/google/gemini-3.1-flash",
+          "calls": 8,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/tencent/hy3-preview:free",
+          "calls": 6,
+          "cost": 0.0
+        },
+        {
+          "model": "ollama/minimax-m2.7:cloud",
+          "calls": 11,
+          "cost": 0.0
+        }
+      ],
+      "total_cost": 0.0
+    },
+    {
+      "date": "2026-04-26",
+      "models": [
+        {
+          "model": "ollama/gemma3:12b",
+          "calls": 13,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/google/gemini-3.1-flash",
+          "calls": 19,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/tencent/hy3-preview:free",
+          "calls": 19,
+          "cost": 0.0
+        },
+        {
+          "model": "ollama/minimax-m2.7:cloud",
+          "calls": 13,
+          "cost": 0.0
+        }
+      ],
+      "total_cost": 0.0
+    },
+    {
+      "date": "2026-04-25",
+      "models": [
+        {
+          "model": "ollama/gemma3:12b",
+          "calls": 20,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/google/gemini-3.1-flash",
+          "calls": 10,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/tencent/hy3-preview:free",
+          "calls": 19,
+          "cost": 0.0
+        },
+        {
+          "model": "ollama/minimax-m2.7:cloud",
+          "calls": 8,
+          "cost": 0.0
+        }
+      ],
+      "total_cost": 0.0
+    },
+    {
+      "date": "2026-04-24",
+      "models": [
+        {
+          "model": "ollama/gemma3:12b",
+          "calls": 16,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/google/gemini-3.1-flash",
+          "calls": 15,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/tencent/hy3-preview:free",
+          "calls": 20,
+          "cost": 0.0
+        },
+        {
+          "model": "ollama/minimax-m2.7:cloud",
+          "calls": 13,
+          "cost": 0.0
+        }
+      ],
+      "total_cost": 0.0
+    },
+    {
+      "date": "2026-04-23",
+      "models": [
+        {
+          "model": "ollama/gemma3:12b",
+          "calls": 20,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/google/gemini-3.1-flash",
+          "calls": 11,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/tencent/hy3-preview:free",
+          "calls": 19,
+          "cost": 0.0
+        },
+        {
+          "model": "ollama/minimax-m2.7:cloud",
+          "calls": 19,
+          "cost": 0.0
+        }
+      ],
+      "total_cost": 0.0
+    },
+    {
+      "date": "2026-04-22",
+      "models": [
+        {
+          "model": "ollama/gemma3:12b",
+          "calls": 20,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/google/gemini-3.1-flash",
+          "calls": 20,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/tencent/hy3-preview:free",
+          "calls": 14,
+          "cost": 0.0
+        },
+        {
+          "model": "ollama/minimax-m2.7:cloud",
+          "calls": 17,
+          "cost": 0.0
+        }
+      ],
+      "total_cost": 0.0
+    },
+    {
+      "date": "2026-04-21",
+      "models": [
+        {
+          "model": "ollama/gemma3:12b",
+          "calls": 6,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/google/gemini-3.1-flash",
+          "calls": 15,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/tencent/hy3-preview:free",
+          "calls": 18,
+          "cost": 0.0
+        },
+        {
+          "model": "ollama/minimax-m2.7:cloud",
+          "calls": 13,
+          "cost": 0.0
+        }
+      ],
+      "total_cost": 0.0
+    }
+  ]
+}

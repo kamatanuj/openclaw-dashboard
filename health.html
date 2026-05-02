@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health - OpenClaw Dashboard</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%); min-height: 100vh; padding: 30px; color: #fff; }
+        .header { background: linear-gradient(135deg, rgba(16, 185, 129, 0.2), rgba(5, 150, 105, 0.2)); border-radius: 20px; padding: 25px 35px; margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(16, 185, 129, 0.2); }
+        .header h1 { font-size: 2em; color: #10b981; }
+        .back-link { color: #10b981; text-decoration: none; padding: 12px 24px; background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 12px; font-weight: 500; transition: all 0.3s; }
+        .back-link:hover { background: #10b981; color: #fff; }
+        .health-main { background: linear-gradient(145deg, rgba(30, 30, 60, 0.9), rgba(20, 20, 45, 0.95)); border-radius: 24px; padding: 40px; text-align: center; margin-bottom: 25px; border: 1px solid rgba(255,255,255,0.08); }
+        .health-status { padding: 40px; border-radius: 20px; margin-bottom: 20px; }
+        .health-good { background: linear-gradient(135deg, #10b981, #059669); }
+        .health-warning { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .health-critical { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        .health-score { font-size: 6em; font-weight: 800; text-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+        .health-label { font-size: 1.5em; text-transform: uppercase; letter-spacing: 4px; margin-top: 10px; }
+        .details-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
+        .detail-card { background: rgba(255,255,255,0.05); padding: 25px; border-radius: 16px; text-align: center; border: 1px solid rgba(255,255,255,0.08); transition: all 0.3s; }
+        .detail-card:hover { background: rgba(16, 185, 129, 0.1); transform: translateY(-3px); }
+        .detail-label { font-size: 0.8em; color: rgba(255,255,255,0.5); text-transform: uppercase; margin-bottom: 8px; }
+        .detail-value { font-size: 1.4em; font-weight: 600; color: #fff; }
+        .timestamp { text-align: center; margin-top: 20px; color: rgba(255,255,255,0.4); }
+        .status-badge { display: inline-block; padding: 8px 20px; border-radius: 20px; font-size: 0.9em; font-weight: 600; margin-top: 15px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏥 System Health</h1>
+        <a href="index.html" class="back-link">← Back to Dashboard</a>
+    </div>
+    
+    <div class="health-main">
+        <div id="health-content"><div class="health-status">Loading...</div></div>
+        <div class="timestamp">Last checked: <span id="last-check">-</span></div>
+    </div>
+
+    <script>
+        fetch('health.json')
+            .then(r => r.json())
+            .then(data => {
+                const statusClass = data.status === 'good' ? 'health-good' : data.status === 'warning' ? 'health-warning' : 'health-critical';
+                document.getElementById('health-content').innerHTML = `
+                    <div class="health-status ${statusClass}">
+                        <div class="health-score">${data.health_score}</div>
+                        <div class="health-label">${data.status.toUpperCase()}</div>
+                    </div>
+                    <div class="details-grid">
+                        <div class="detail-card">
+                            <div class="detail-label">Hostname</div>
+                            <div class="detail-value">${data.hostname}</div>
+                        </div>
+                        <div class="detail-card">
+                            <div class="detail-label">Uptime</div>
+                            <div class="detail-value">${data.uptime}</div>
+                        </div>
+                        <div class="detail-card">
+                            <div class="detail-label">Disk Usage</div>
+                            <div class="detail-value">${data.disk_usage}%</div>
+                        </div>
+                        <div class="detail-card">
+                            <div class="detail-label">Memory Usage</div>
+                            <div class="detail-value">${data.memory_usage}%</div>
+                        </div>
+                        <div class="detail-card">
+                            <div class="detail-label">Gateway</div>
+                            <div class="detail-value">${data.gateway_running}</div>
+                        </div>
+                    </div>
+                `;
+                document.getElementById('last-check').textContent = new Date().toLocaleString();
+            });
+    </script>
+</body>
+</html>

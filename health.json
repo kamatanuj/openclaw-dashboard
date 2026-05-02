@@ -1,0 +1,10 @@
+{
+  "hostname": "srv1322534",
+  "uptime": "up 2 hours, 5 minutes",
+  "disk_usage": 37,
+  "memory_usage": "6",
+  "gateway_running": "yes",
+  "health_score": 100,
+  "status": "good",
+  "timestamp": "2026-05-01T13:30:01+00:00"
+}

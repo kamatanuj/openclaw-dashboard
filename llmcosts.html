@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Costs - OpenClaw Dashboard</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%); min-height: 100vh; padding: 30px; color: #fff; }
+        .header { background: linear-gradient(135deg, rgba(236, 72, 153, 0.2), rgba(219, 39, 119, 0.2)); border-radius: 20px; padding: 25px 35px; margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(236, 72, 153, 0.2); }
+        .header h1 { font-size: 2em; color: #ec4899; }
+        .back-link { color: #ec4899; text-decoration: none; padding: 12px 24px; background: rgba(236, 72, 153, 0.15); border: 1px solid rgba(236, 72, 153, 0.3); border-radius: 12px; font-weight: 500; transition: all 0.3s; }
+        .back-link:hover { background: #ec4899; color: #fff; }
+        .section { background: linear-gradient(145deg, rgba(30, 30, 60, 0.9), rgba(20, 20, 45, 0.95)); border-radius: 20px; padding: 25px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.08); }
+        .section h2 { color: #ec4899; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid rgba(236, 72, 153, 0.3); font-size: 1.3em; }
+        .cost-day { padding: 20px; margin-bottom: 15px; border-radius: 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); }
+        .cost-day.today { background: linear-gradient(135deg, rgba(236, 72, 153, 0.15), rgba(219, 39, 119, 0.15)); border-color: rgba(236, 72, 153, 0.3); }
+        .cost-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .cost-date { font-size: 1.2em; font-weight: 700; }
+        .cost-total { font-size: 1.5em; font-weight: 700; background: linear-gradient(135deg, #ec4899, #db2777); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .model-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .model-row:last-child { border-bottom: none; }
+        .model-name { font-family: 'Monaco', monospace; color: rgba(255,255,255,0.7); }
+        .model-stats { display: flex; gap: 20px; color: rgba(255,255,255,0.5); }
+        .empty { text-align: center; padding: 60px; color: rgba(255,255,255,0.3); font-size: 1.1em; }
+        .info-box { background: rgba(236, 72, 153, 0.1); border-radius: 12px; padding: 15px; margin-top: 20px; color: #ec4899; font-size: 0.9em; border: 1px solid rgba(236, 72, 153, 0.2); }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📊 LLM Costs</h1>
+        <a href="index.html" class="back-link">← Back to Dashboard</a>
+    </div>
+    
+    <div class="section">
+        <h2>💰 Cost History</h2>
+        <div id="content"><div class="empty">Loading...</div></div>
+    </div>
+
+    <script>
+        fetch('costs.json')
+            .then(r => r.json())
+            .then(data => {
+                const today = new Date().toISOString().split('T')[0];
+                let html = '';
+                let grandTotal = 0;
+                
+                data.costs.forEach(day => {
+                    const isToday = day.date === today;
+                    grandTotal += day.total_cost;
+                    
+                    html += `
+                        <div class="cost-day ${isToday ? 'today' : ''}">
+                            <div class="cost-header">
+                                <span class="cost-date">${isToday ? '✅ Today' : day.date}</span>
+                                <span class="cost-total">$${day.total_cost.toFixed(4)}</span>
+                            </div>
+                            ${day.models.map(m => `
+                                <div class="model-row">
+                                    <span class="model-name">${m.model}</span>
+                                    <span class="model-stats">
+                                        <span>${m.calls} calls</span>
+                                        <span>$${m.cost.toFixed(4)}</span>
+                                    </span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    `;
+                });
+                
+                if (data.costs.length === 0) {
+                    html = '<div class="empty">No cost data available</div>';
+                } else {
+                    html += `
+                        <div class="info-box">
+                            <strong>📅 Period:</strong> Showing ${data.costs.length} days |
+                            <strong>💵 Grand Total:</strong> $${grandTotal.toFixed(4)} |
+                            <strong>🧮 Models:</strong> ${data.costs[0]?.models.length || 0}
+                        </div>
+                    `;
+                }
+                
+                document.getElementById('content').innerHTML = html;
+            });
+    </script>
+</body>
+</html>

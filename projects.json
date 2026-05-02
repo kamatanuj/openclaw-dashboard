@@ -1,0 +1,61 @@
+{
+  "projects": [
+    {
+      "name": "Livealth CRM",
+      "status": "Live",
+      "start_date": "2026-04-29",
+      "last_update": "2026-04-29",
+      "description": "Lead management dashboard. 67 leads (62 hot, 5 cold) auto-updated hourly from D-insights API. URL: https://livealth-crm.pages.dev"
+    },
+    {
+      "name": "Rupeeboss CRM",
+      "status": "Live",
+      "start_date": "2026-04-29",
+      "last_update": "2026-04-29",
+      "description": "Lead management dashboard for Rupeeboss voice agent. 29 leads (7 with names) auto-updated hourly from D-insights API. URL: https://rupeeboss-crm.pages.dev",
+      "url": "https://rupeeboss-crm.pages.dev"
+    },
+    {
+      "name": "Printastick Website",
+      "status": "Live",
+      "start_date": "2026-04-25",
+      "last_update": "2026-04-28",
+      "description": "PHP backend + SQLite on Dreamhost, live at printastick.com/NewWebsite/"
+    },
+    {
+      "name": "Daily AI News Digest",
+      "status": "In Progress",
+      "start_date": "2026-04-25",
+      "last_update": "2026-04-29",
+      "description": "Automated LinkedIn/Telegram posting with image support"
+    },
+    {
+      "name": "Voice Command System",
+      "status": "Executed",
+      "start_date": "2026-04-20",
+      "last_update": "2026-04-25",
+      "description": "Hybrid voice processing with Whisper + Telegram"
+    },
+    {
+      "name": "Firecrawl Integration",
+      "status": "Executed",
+      "start_date": "2026-04-22",
+      "last_update": "2026-04-25",
+      "description": "Web scraping & search with API integration"
+    },
+    {
+      "name": "OpenClaw Voice Skill",
+      "status": "Executed",
+      "start_date": "2026-04-21",
+      "last_update": "2026-04-25",
+      "description": "Voice-to-voice loop with D-insights TTS"
+    },
+    {
+      "name": "LinkedIn Image Upload Fix",
+      "status": "Executed",
+      "start_date": "2026-04-27",
+      "last_update": "2026-04-28",
+      "description": "Fixed LinkedIn image upload API integration"
+    }
+  ]
+}

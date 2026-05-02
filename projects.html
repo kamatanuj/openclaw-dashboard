@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - OpenClaw Dashboard</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', 'Segoe UI', system-ui, sans-serif; background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 100%); min-height: 100vh; padding: 30px; color: #fff; }
+        .header { background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%); border-radius: 20px; padding: 25px 35px; margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center; border: 1px solid rgba(255,255,255,0.1); }
+        .header h1 { font-size: 2em; background: linear-gradient(135deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .back-link { color: #667eea; text-decoration: none; padding: 12px 24px; background: rgba(102, 126, 234, 0.15); border: 1px solid rgba(102, 126, 234, 0.3); border-radius: 12px; font-weight: 500; transition: all 0.3s; }
+        .back-link:hover { background: #667eea; color: #fff; }
+        .section { background: linear-gradient(145deg, rgba(30, 30, 60, 0.9), rgba(20, 20, 45, 0.95)); border-radius: 20px; padding: 25px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.08); }
+        .section h2 { color: #667eea; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 2px solid rgba(102, 126, 234, 0.3); font-size: 1.3em; display: flex; align-items: center; gap: 10px; }
+        .project-item { padding: 18px; margin-bottom: 15px; border-radius: 16px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); transition: all 0.3s; }
+        .project-item:hover { background: rgba(102, 126, 234, 0.1); border-color: rgba(102, 126, 234, 0.3); transform: translateX(5px); }
+        .project-name { font-weight: 600; font-size: 1.1em; margin-bottom: 8px; color: #fff; }
+        .project-desc { color: rgba(255,255,255,0.6); margin-bottom: 12px; line-height: 1.6; }
+        .project-meta { font-size: 0.85em; color: rgba(255,255,255,0.4); margin-top: 10px; display: flex; gap: 20px; }
+        .status-badge { display: inline-block; padding: 6px 16px; border-radius: 20px; font-size: 0.8em; font-weight: 600; margin-right: 10px; }
+        .status-badge.started { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .status-badge.progress { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+        .status-badge.executed { background: linear-gradient(135deg, #10b981, #059669); }
+        .empty { text-align: center; padding: 60px; color: rgba(255,255,255,0.3); font-size: 1.1em; }
+        .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-bottom: 20px; }
+        .stat-card { background: rgba(255,255,255,0.03); padding: 20px; border-radius: 16px; text-align: center; border: 1px solid rgba(255,255,255,0.05); }
+        .stat-value { font-size: 2.5em; font-weight: 700; background: linear-gradient(135deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .stat-label { font-size: 0.85em; color: rgba(255,255,255,0.5); margin-top: 5px; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📁 All Projects</h1>
+        <a href="index.html" class="back-link">← Back to Dashboard</a>
+    </div>
+    
+    <div class="section">
+        <h2>📂 Current Projects</h2>
+        <div id="current-projects"><div class="empty">Loading...</div></div>
+    </div>
+    
+    <div class="section">
+        <h2>✅ Completed Projects</h2>
+        <div id="completed-projects"><div class="empty">Loading...</div></div>
+    </div>
+
+    <script>
+        fetch('projects.json')
+            .then(r => r.json())
+            .then(data => {
+                data.projects.sort((a, b) => new Date(b.last_update) - new Date(a.last_update));
+                
+                const currentDiv = document.getElementById('current-projects');
+                const completedDiv = document.getElementById('completed-projects');
+                currentDiv.innerHTML = '';
+                completedDiv.innerHTML = '';
+                
+                let currentCount = 0, completedCount = 0;
+                
+                data.projects.forEach(p => {
+                    const statusClass = p.status === 'Executed' ? 'executed' : p.status === 'In Progress' ? 'progress' : 'started';
+                    const html = `
+                        <div class="project-item">
+                            <div class="project-name">${p.name}</div>
+                            <div class="project-desc">${p.description}</div>
+                            <span class="status-badge ${statusClass}">${p.status}</span>
+                            <div class="project-meta">
+                                <span>📅 Started: ${p.start_date}</span>
+                                <span>🕐 Updated: ${p.last_update}</span>
+                            </div>
+                        </div>
+                    `;
+                    
+                    if (p.status === 'Executed' || p.status === 'Completed') {
+                        completedDiv.innerHTML += html;
+                        completedCount++;
+                    } else {
+                        currentDiv.innerHTML += html;
+                        currentCount++;
+                    }
+                });
+                
+                if (currentCount === 0) currentDiv.innerHTML = '<div class="empty">No active projects</div>';
+                if (completedCount === 0) completedDiv.innerHTML = '<div class="empty">No completed projects</div>';
+            });
+    </script>
+</body>
+</html>
