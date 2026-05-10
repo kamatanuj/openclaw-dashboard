@@ -4,16 +4,30 @@
       "name": "Livealth CRM",
       "status": "Live",
       "start_date": "2026-04-29",
-      "last_update": "2026-04-29",
-      "description": "Lead management dashboard. 67 leads (62 hot, 5 cold) auto-updated hourly from D-insights API. URL: https://livealth-crm.pages.dev"
+      "last_update": "2026-05-10",
+      "description": "Lead management dashboard. 67 leads auto-updated hourly. URL: https://livealth-crm.pages.dev"
     },
     {
       "name": "Rupeeboss CRM",
       "status": "Live",
       "start_date": "2026-04-29",
-      "last_update": "2026-04-29",
-      "description": "Lead management dashboard for Rupeeboss voice agent. 29 leads (7 with names) auto-updated hourly from D-insights API. URL: https://rupeeboss-crm.pages.dev",
+      "last_update": "2026-05-10",
+      "description": "Lead management for Rupeeboss voice agent. 174 leads with transcripts/summaries. URL: https://rupeeboss-crm.pages.dev",
       "url": "https://rupeeboss-crm.pages.dev"
+    },
+    {
+      "name": "OpenClaw Dashboard",
+      "status": "Live",
+      "start_date": "2026-05-10",
+      "last_update": "2026-05-10",
+      "description": "Real-time monitoring dashboard for OpenClaw. URL: https://openclaw-dashboard.kamatanuj.workers.dev"
+    },
+    {
+      "name": "Daily AI News Digest",
+      "status": "Live",
+      "start_date": "2026-04-25",
+      "last_update": "2026-05-10",
+      "description": "Automated LinkedIn/Telegram posting with image support"
     },
     {
       "name": "Printastick Website",
@@ -21,13 +35,6 @@
       "start_date": "2026-04-25",
       "last_update": "2026-04-28",
       "description": "PHP backend + SQLite on Dreamhost, live at printastick.com/NewWebsite/"
-    },
-    {
-      "name": "Daily AI News Digest",
-      "status": "In Progress",
-      "start_date": "2026-04-25",
-      "last_update": "2026-04-29",
-      "description": "Automated LinkedIn/Telegram posting with image support"
     },
     {
       "name": "Voice Command System",
