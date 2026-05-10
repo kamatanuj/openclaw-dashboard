@@ -14,8 +14,8 @@ UPTIME=$(uptime -p 2>/dev/null || uptime | awk -F',' '{print $1}' | sed 's/.*up 
 DISK_USAGE=$(df -h / | tail -1 | awk '{print $5}' | sed 's/%//')
 MEMORY_USAGE=$(free | grep Mem | awk '{printf("%.0f", $3/$2 * 100.0)}')
 
-# Check if gateway is running
-GATEWAY_RUNNING=$(pgrep -f "openclaw-gateway" > /dev/null && echo "yes" || echo "no")
+# Check if gateway is running (matches 'openclaw' and 'gateway' pattern)
+GATEWAY_RUNNING=$(pgrep -f "openclaw.*gateway" > /dev/null && echo "yes" || echo "no")
 
 # Calculate health score
 HEALTH_SCORE=100
