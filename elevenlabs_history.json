@@ -65,6 +65,83 @@
         "calls": 17,
         "cost": 2.72
       }
+    },
+    {
+      "date": "2026-05-04",
+      "Rupeeboss": {
+        "calls": 4,
+        "cost": 0.64
+      },
+      "Livealth_Bio_Pharma": {
+        "calls": 14,
+        "cost": 2.24
+      }
+    },
+    {
+      "date": "2026-05-05",
+      "Rupeeboss": {
+        "calls": 6,
+        "cost": 0.96
+      },
+      "Livealth_Bio_Pharma": {
+        "calls": 14,
+        "cost": 2.24
+      }
+    },
+    {
+      "date": "2026-05-06",
+      "Rupeeboss": {
+        "calls": 6,
+        "cost": 0.96
+      },
+      "Livealth_Bio_Pharma": {
+        "calls": 10,
+        "cost": 1.6
+      }
+    },
+    {
+      "date": "2026-05-07",
+      "Rupeeboss": {
+        "calls": 20,
+        "cost": 3.2
+      },
+      "Livealth_Bio_Pharma": {
+        "calls": 16,
+        "cost": 2.56
+      }
+    },
+    {
+      "date": "2026-05-08",
+      "Rupeeboss": {
+        "calls": 20,
+        "cost": 3.2
+      },
+      "Livealth_Bio_Pharma": {
+        "calls": 16,
+        "cost": 2.56
+      }
+    },
+    {
+      "date": "2026-05-09",
+      "Rupeeboss": {
+        "calls": 20,
+        "cost": 3.2
+      },
+      "Livealth_Bio_Pharma": {
+        "calls": 16,
+        "cost": 2.56
+      }
+    },
+    {
+      "date": "2026-05-10",
+      "Rupeeboss": {
+        "calls": 20,
+        "cost": 3.2
+      },
+      "Livealth_Bio_Pharma": {
+        "calls": 16,
+        "cost": 2.56
+      }
     }
   ]
 }
