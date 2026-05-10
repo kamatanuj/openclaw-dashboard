@@ -1,2 +1,4 @@
 30 1 * * * /root/.openclaw/scripts/daily-ai-news.sh >> /root/.openclaw/logs/daily-news.log 2>&1
 0 * * * * /root/.openclaw/workspace/livealth/run-pipeline.sh >> /root/.openclaw/logs/livealth-pipeline.log 2>&1
+*/5 * * * * /root/.openclaw/workspace/dashboard/health-check.sh >> /root/.openclaw/logs/health-check.log 2>&1
+0 13 * * * /root/.openclaw/workspace/dashboard/track-costs.sh >> /root/.openclaw/logs/track-costs.log 2>&1
