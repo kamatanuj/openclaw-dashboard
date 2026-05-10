@@ -3,7 +3,7 @@ export default {
     const url = new URL(request.url);
     
     // Use the latest deployed version
-    const PAGES_URL = 'https://f3f82efb.openclaw-dashboard-7vh.pages.dev';
+    const PAGES_URL = 'https://aa053f77.openclaw-dashboard-7vh.pages.dev';
     
     // Dashboard URL - redirect to the clean path
     if (url.pathname === '/' || url.pathname === '/dashboard') {
