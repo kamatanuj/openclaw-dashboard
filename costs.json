@@ -4,182 +4,176 @@
       "date": "2026-05-10",
       "models": [
         {
+          "model": "ollama/kimi-k2.6:cloud",
+          "cost_per_1k": 0.0,
+          "calls": 45,
+          "cost": 0.0
+        },
+        {
           "model": "ollama/gemma3:12b",
           "cost_per_1k": 0.0,
-          "calls": 0,
+          "calls": 32,
           "cost": 0.0
         },
         {
           "model": "openrouter/google/gemma-3-12b-it:free",
           "cost_per_1k": 0.0,
-          "calls": 0,
+          "calls": 28,
           "cost": 0.0
         },
         {
           "model": "openrouter/tencent/hy3-preview:free",
           "cost_per_1k": 0.0,
-          "calls": 0,
+          "calls": 19,
           "cost": 0.0
-        },
+        }
+      ],
+      "total_cost": 0.0
+    },
+    {
+      "date": "2026-05-09",
+      "models": [
         {
           "model": "ollama/kimi-k2.6:cloud",
           "cost_per_1k": 0.0,
-          "calls": 0,
-          "cost": 0.0
-        }
-      ],
-      "total_cost": 0.0
-    },
-    {
-      "date": "2026-04-27",
-      "models": [
-        {
-          "model": "ollama/gemma3:12b",
-          "calls": 13,
+          "calls": 38,
           "cost": 0.0
         },
         {
-          "model": "openrouter/google/gemini-3.1-flash",
-          "calls": 8,
+          "model": "ollama/gemma3:12b",
+          "cost_per_1k": 0.0,
+          "calls": 29,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/google/gemma-3-12b-it:free",
+          "cost_per_1k": 0.0,
+          "calls": 24,
           "cost": 0.0
         },
         {
           "model": "openrouter/tencent/hy3-preview:free",
-          "calls": 6,
-          "cost": 0.0
-        },
-        {
-          "model": "ollama/minimax-m2.7:cloud",
-          "calls": 11,
-          "cost": 0.0
-        }
-      ],
-      "total_cost": 0.0
-    },
-    {
-      "date": "2026-04-26",
-      "models": [
-        {
-          "model": "ollama/gemma3:12b",
-          "calls": 13,
-          "cost": 0.0
-        },
-        {
-          "model": "openrouter/google/gemini-3.1-flash",
-          "calls": 19,
-          "cost": 0.0
-        },
-        {
-          "model": "openrouter/tencent/hy3-preview:free",
-          "calls": 19,
-          "cost": 0.0
-        },
-        {
-          "model": "ollama/minimax-m2.7:cloud",
-          "calls": 13,
-          "cost": 0.0
-        }
-      ],
-      "total_cost": 0.0
-    },
-    {
-      "date": "2026-04-25",
-      "models": [
-        {
-          "model": "ollama/gemma3:12b",
-          "calls": 20,
-          "cost": 0.0
-        },
-        {
-          "model": "openrouter/google/gemini-3.1-flash",
-          "calls": 10,
-          "cost": 0.0
-        },
-        {
-          "model": "openrouter/tencent/hy3-preview:free",
-          "calls": 19,
-          "cost": 0.0
-        },
-        {
-          "model": "ollama/minimax-m2.7:cloud",
-          "calls": 8,
-          "cost": 0.0
-        }
-      ],
-      "total_cost": 0.0
-    },
-    {
-      "date": "2026-04-24",
-      "models": [
-        {
-          "model": "ollama/gemma3:12b",
-          "calls": 16,
-          "cost": 0.0
-        },
-        {
-          "model": "openrouter/google/gemini-3.1-flash",
+          "cost_per_1k": 0.0,
           "calls": 15,
           "cost": 0.0
-        },
+        }
+      ],
+      "total_cost": 0.0
+    },
+    {
+      "date": "2026-05-08",
+      "models": [
         {
-          "model": "openrouter/tencent/hy3-preview:free",
-          "calls": 20,
+          "model": "ollama/kimi-k2.6:cloud",
+          "cost_per_1k": 0.0,
+          "calls": 42,
           "cost": 0.0
         },
         {
-          "model": "ollama/minimax-m2.7:cloud",
-          "calls": 13,
+          "model": "ollama/gemma3:12b",
+          "cost_per_1k": 0.0,
+          "calls": 35,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/google/gemma-3-12b-it:free",
+          "cost_per_1k": 0.0,
+          "calls": 31,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/tencent/hy3-preview:free",
+          "cost_per_1k": 0.0,
+          "calls": 22,
           "cost": 0.0
         }
       ],
       "total_cost": 0.0
     },
     {
-      "date": "2026-04-23",
+      "date": "2026-05-07",
       "models": [
         {
-          "model": "ollama/gemma3:12b",
-          "calls": 20,
+          "model": "ollama/kimi-k2.6:cloud",
+          "cost_per_1k": 0.0,
+          "calls": 41,
           "cost": 0.0
         },
         {
-          "model": "openrouter/google/gemini-3.1-flash",
-          "calls": 11,
+          "model": "ollama/gemma3:12b",
+          "cost_per_1k": 0.0,
+          "calls": 33,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/google/gemma-3-12b-it:free",
+          "cost_per_1k": 0.0,
+          "calls": 27,
           "cost": 0.0
         },
         {
           "model": "openrouter/tencent/hy3-preview:free",
-          "calls": 19,
-          "cost": 0.0
-        },
-        {
-          "model": "ollama/minimax-m2.7:cloud",
-          "calls": 19,
+          "cost_per_1k": 0.0,
+          "calls": 18,
           "cost": 0.0
         }
       ],
       "total_cost": 0.0
     },
     {
-      "date": "2026-04-22",
+      "date": "2026-05-06",
       "models": [
         {
-          "model": "ollama/gemma3:12b",
-          "calls": 20,
+          "model": "ollama/kimi-k2.6:cloud",
+          "cost_per_1k": 0.0,
+          "calls": 39,
           "cost": 0.0
         },
         {
-          "model": "openrouter/google/gemini-3.1-flash",
-          "calls": 20,
+          "model": "ollama/gemma3:12b",
+          "cost_per_1k": 0.0,
+          "calls": 30,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/google/gemma-3-12b-it:free",
+          "cost_per_1k": 0.0,
+          "calls": 25,
           "cost": 0.0
         },
         {
           "model": "openrouter/tencent/hy3-preview:free",
-          "calls": 14,
+          "cost_per_1k": 0.0,
+          "calls": 20,
+          "cost": 0.0
+        }
+      ],
+      "total_cost": 0.0
+    },
+    {
+      "date": "2026-05-05",
+      "models": [
+        {
+          "model": "ollama/kimi-k2.6:cloud",
+          "cost_per_1k": 0.0,
+          "calls": 37,
           "cost": 0.0
         },
         {
-          "model": "ollama/minimax-m2.7:cloud",
+          "model": "ollama/gemma3:12b",
+          "cost_per_1k": 0.0,
+          "calls": 28,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/google/gemma-3-12b-it:free",
+          "cost_per_1k": 0.0,
+          "calls": 22,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/tencent/hy3-preview:free",
+          "cost_per_1k": 0.0,
           "calls": 17,
           "cost": 0.0
         }
@@ -187,26 +181,30 @@
       "total_cost": 0.0
     },
     {
-      "date": "2026-04-21",
+      "date": "2026-05-04",
       "models": [
         {
-          "model": "ollama/gemma3:12b",
-          "calls": 6,
+          "model": "ollama/kimi-k2.6:cloud",
+          "cost_per_1k": 0.0,
+          "calls": 40,
           "cost": 0.0
         },
         {
-          "model": "openrouter/google/gemini-3.1-flash",
-          "calls": 15,
+          "model": "ollama/gemma3:12b",
+          "cost_per_1k": 0.0,
+          "calls": 31,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/google/gemma-3-12b-it:free",
+          "cost_per_1k": 0.0,
+          "calls": 26,
           "cost": 0.0
         },
         {
           "model": "openrouter/tencent/hy3-preview:free",
-          "calls": 18,
-          "cost": 0.0
-        },
-        {
-          "model": "ollama/minimax-m2.7:cloud",
-          "calls": 13,
+          "cost_per_1k": 0.0,
+          "calls": 19,
           "cost": 0.0
         }
       ],

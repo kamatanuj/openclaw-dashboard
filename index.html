@@ -823,7 +823,7 @@
                 });
             
             // Load LLM costs
-            fetch('costs.json')
+            fetch('costs.json?v=' + new Date().getTime())
                 .then(r => r.json())
                 .then(data => {
                     const div = document.getElementById('costs-widget');

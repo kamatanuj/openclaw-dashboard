@@ -38,7 +38,10 @@
     </div>
 
     <script>
-        fetch('costs.json')
+        // Add cache-busting parameter
+        const cacheBuster = '?v=' + new Date().getTime();
+        
+        fetch('costs.json' + cacheBuster)
             .then(r => r.json())
             .then(data => {
                 const today = new Date().toISOString().split('T')[0];
