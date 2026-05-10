@@ -183,11 +183,10 @@
         .widget:hover .widget-preview {
             opacity: 1;
             visibility: visible;
-            pointer-events: none; /* Let clicks pass through to underlying elements */
         }
         
         .widget-preview {
-            pointer-events: auto; /* But preview itself is clickable */
+            pointer-events: none; /* Let clicks pass through to underlying elements */
         }
         
         .preview-title {
