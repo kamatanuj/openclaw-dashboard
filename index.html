@@ -85,6 +85,11 @@
             border-color: rgba(102, 126, 234, 0.4);
         }
         
+        .widget:hover .widget-header {
+            position: relative;
+            z-index: 5;
+        }
+        
         /* Widget Header */
         .widget-header {
             display: flex;
@@ -119,12 +124,21 @@
             border: 1px solid rgba(102, 126, 234, 0.3);
             transition: all 0.3s;
             font-weight: 500;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .widget:hover .widget-link {
+            background: rgba(102, 126, 234, 0.25);
+            border-color: rgba(102, 126, 234, 0.5);
+            z-index: 100;
         }
         
         .widget-link:hover {
             background: var(--accent-color);
             color: #fff;
             transform: scale(1.05);
+            z-index: 100;
         }
         
         /* Widget Content */
