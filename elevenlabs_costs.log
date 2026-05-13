@@ -2604,3 +2604,5 @@ History: 16 entries
 Rupeeboss: 18 calls, $2.88, 36 min
 Livealth: 19 calls, $3.04, 38 min
 Total: 37 calls, $5.92
+[2026-05-13T05:07:44] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
