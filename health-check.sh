@@ -1,8 +1,10 @@
 #!/bin/bash
 # Health Check for OpenClaw
 # Outputs JSON with system health metrics
+# Also pushes updates to GitHub so dashboard stays current
 
 HEALTH_FILE="/root/.openclaw/workspace/dashboard/health.json"
+DASHBOARD_DIR="/root/.openclaw/workspace/dashboard"
 
 # Get current timestamp
 TIMESTAMP=$(date -u "+%Y-%m-%dT%H:%M:%S+00:00")
@@ -54,3 +56,19 @@ cat > "$HEALTH_FILE" <<EOF
 EOF
 
 echo "✅ Health check updated: $STATUS (score: $HEALTH_SCORE)"
+
+# Push to GitHub
+cd "$DASHBOARD_DIR" || exit 1
+
+# Check if there are changes
+if git diff --quiet && git diff --cached --quiet; then
+    echo "📋 No changes to push"
+    exit 0
+fi
+
+# Add, commit, and push
+git add -A
+git commit -m "Auto-update: Dashboard health $(date -u '+%Y-%m-%d %H:%M UTC')"
+git push origin main
+
+echo "🚀 Dashboard health pushed to GitHub"

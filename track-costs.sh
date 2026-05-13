@@ -1,9 +1,11 @@
 #!/bin/bash
 # Cost Tracking for OpenClaw LLM Usage
 # Outputs JSON with daily costs broken down by model
+# Also pushes updates to GitHub so dashboard stays current
 
 LOG_DIR="/root/.openclaw/logs"
 COST_FILE="/root/.openclaw/workspace/dashboard/costs.json"
+DASHBOARD_DIR="/root/.openclaw/workspace/dashboard"
 
 # Get current date
 TODAY=$(date "+%Y-%m-%d")
@@ -70,3 +72,19 @@ with open(cost_file, 'w') as f:
 print(f'✅ Costs updated for {today}: ${total_cost}')
 print(f'📊 Total entries: {len(data[\"costs\"])} days')
 "
+
+# Push to GitHub
+cd "$DASHBOARD_DIR" || exit 1
+
+# Check if there are changes
+if git diff --quiet && git diff --cached --quiet; then
+    echo "📋 No changes to push"
+    exit 0
+fi
+
+# Add, commit, and push
+git add -A
+git commit -m "Auto-update: Dashboard costs $(date -u '+%Y-%m-%d %H:%M UTC')"
+git push origin main
+
+echo "🚀 Dashboard costs pushed to GitHub"
