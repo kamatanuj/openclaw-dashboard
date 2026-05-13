@@ -7,11 +7,21 @@ export default {
     
     // Dashboard URL - redirect to the clean path
     if (url.pathname === '/' || url.pathname === '/dashboard') {
-      return fetch(PAGES_URL + '/');
+      return fetch(PAGES_URL + '/', {
+        headers: {
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
+          'Pragma': 'no-cache'
+        }
+      });
     }
     
-    // Proxy all other requests to the dashboard
+    // Proxy all other requests to the dashboard with no-cache headers
     const dashboardUrl = PAGES_URL + url.pathname + url.search;
-    return fetch(dashboardUrl, request);
+    return fetch(dashboardUrl, {
+      headers: {
+        'Cache-Control': 'no-cache, no-store, must-revalidate',
+        'Pragma': 'no-cache'
+      }
+    });
   }
 };
