@@ -3,7 +3,7 @@ export default {
     const url = new URL(request.url);
     
     // Use the latest deployed version
-    const PAGES_URL = 'https://407d98f0.openclaw-dashboard-7vh.pages.dev';
+    const PAGES_URL = 'https://a7bcde76.openclaw-dashboard-7vh.pages.dev';
     
     // For all requests, fetch from Pages with cache-busting
     const dashboardUrl = PAGES_URL + url.pathname + url.search;
