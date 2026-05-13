@@ -139,8 +139,41 @@
         "cost": 3.2
       },
       "Livealth_Bio_Pharma": {
+        "calls": 19,
+        "cost": 3.04
+      }
+    },
+    {
+      "date": "2026-05-11",
+      "Rupeeboss": {
+        "calls": 19,
+        "cost": 3.04
+      },
+      "Livealth_Bio_Pharma": {
         "calls": 18,
         "cost": 2.88
+      }
+    },
+    {
+      "date": "2026-05-12",
+      "Rupeeboss": {
+        "calls": 18,
+        "cost": 2.88
+      },
+      "Livealth_Bio_Pharma": {
+        "calls": 19,
+        "cost": 3.04
+      }
+    },
+    {
+      "date": "2026-05-13",
+      "Rupeeboss": {
+        "calls": 18,
+        "cost": 2.88
+      },
+      "Livealth_Bio_Pharma": {
+        "calls": 19,
+        "cost": 3.04
       }
     }
   ]
