@@ -115,3 +115,19 @@ echo "=== D-insights Stats ==="
 echo "Rupeeboss: $rupeeboss_calls calls, \$$rupeeboss_cost, $rupeeboss_minutes min"
 echo "Livealth: $livealth_calls calls, \$$livealth_cost, $livealth_minutes min"
 echo "Total: $total_calls calls, \$$total_cost"
+
+# Push to GitHub
+cd /root/.openclaw/workspace/dashboard || exit 1
+
+# Check if there are changes
+if git diff --quiet && git diff --cached --quiet; then
+    echo "📋 No changes to push"
+    exit 0
+fi
+
+# Add, commit, and push
+git add -A
+git commit -m "Auto-update: ElevenLabs costs $(date -u '+%Y-%m-%d %H:%M UTC')"
+git push origin main
+
+echo "🚀 ElevenLabs costs pushed to GitHub"
