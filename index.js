@@ -5,22 +5,20 @@ export default {
     // Use the latest deployed version
     const PAGES_URL = 'https://407d98f0.openclaw-dashboard-7vh.pages.dev';
     
-    // Dashboard URL - redirect to the clean path
-    if (url.pathname === '/' || url.pathname === '/dashboard') {
-      return fetch(PAGES_URL + '/', {
-        headers: {
-          'Cache-Control': 'no-cache, no-store, must-revalidate',
-          'Pragma': 'no-cache'
-        }
-      });
-    }
-    
-    // Proxy all other requests to the dashboard with no-cache headers
+    // For all requests, fetch from Pages with cache-busting
     const dashboardUrl = PAGES_URL + url.pathname + url.search;
+    
     return fetch(dashboardUrl, {
+      cf: {
+        // Always fetch fresh from origin
+        cacheTtl: 0,
+        cacheEverything: false,
+      },
       headers: {
+        ...request.headers,
         'Cache-Control': 'no-cache, no-store, must-revalidate',
-        'Pragma': 'no-cache'
+        'Pragma': 'no-cache',
+        'Expires': '0',
       }
     });
   }
