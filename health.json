@@ -1,10 +1,11 @@
-✅ Health check updated: good (score: 100)
-p 2 hours, 33 minutes",
+{
+  "hostname": "srv1322534",
+  "uptime": "up 18 hours, 7 minutes",
   "disk_usage": 43,
-  "memory_usage": "6",
+  "memory_usage": "7",
   "gateway_running": "yes",
   "health_score": 100,
   "status": "good",
-  "timestamp": "2026-05-12T13:30:01+00:00",
-  "date": "2026-05-12"
+  "timestamp": "2026-05-13T05:03:16+00:00",
+  "date": "2026-05-13"
 }
