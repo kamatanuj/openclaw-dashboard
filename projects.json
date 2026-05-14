@@ -1,6 +1,22 @@
 {
   "projects": [
     {
+      "name": "SaffronStays Voice Agent",
+      "status": "Live",
+      "start_date": "2026-05-13",
+      "last_update": "2026-05-14",
+      "description": "Luxury villa booking voice agent with hybrid architecture. 12 villas, booking/cancellation/rescheduling. URL: https://saffronstays-crm.pages.dev",
+      "url": "https://saffronstays-crm.pages.dev"
+    },
+    {
+      "name": "Service Reminder System",
+      "status": "Live",
+      "start_date": "2026-05-13",
+      "last_update": "2026-05-13",
+      "description": "Automated service reminders with booking system. MongoDB backend, SendGrid emails, Google Calendar. URL: https://service-reminder.kamatanuj.workers.dev",
+      "url": "https://service-reminder.kamatanuj.workers.dev"
+    },
+    {
       "name": "Livealth CRM",
       "status": "Live",
       "start_date": "2026-04-29",
