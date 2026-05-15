@@ -3835,3 +3835,10 @@ To https://github.com/kamatanuj/openclaw-dashboard.git
 🚀 ElevenLabs costs pushed to GitHub
 [2026-05-15T06:00:56] Polling D-insights...
 Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+[2026-05-15T07:00:02] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 18 entries
+=== D-insights Stats ===
+Rupeeboss: 4 calls, $.64, 8 min
+Livealth: 17 calls, $2.72, 34 min
+Total: 21 calls, $3.36
