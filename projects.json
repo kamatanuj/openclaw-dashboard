@@ -4,8 +4,8 @@
       "name": "SaffronStays Voice Agent",
       "status": "Live",
       "start_date": "2026-05-13",
-      "last_update": "2026-05-14",
-      "description": "Luxury villa booking voice agent with hybrid architecture. 12 villas, booking/cancellation/rescheduling. URL: https://saffronstays-crm.pages.dev",
+      "last_update": "2026-05-15",
+      "description": "Luxury villa booking voice agent with 13 tools. 17 leads captured. CRM: https://saffronstays-crm.pages.dev | API: https://saffronstays-api.kamatanuj.workers.dev",
       "url": "https://saffronstays-crm.pages.dev"
     },
     {
@@ -35,7 +35,7 @@
       "name": "OpenClaw Dashboard",
       "status": "Live",
       "start_date": "2026-05-10",
-      "last_update": "2026-05-10",
+      "last_update": "2026-05-15",
       "description": "Real-time monitoring dashboard for OpenClaw. URL: https://openclaw-dashboard.kamatanuj.workers.dev"
     },
     {
