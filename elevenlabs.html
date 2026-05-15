@@ -71,8 +71,10 @@
             const labels = historyData.history.map(h => h.date.split('-').slice(1).join('/'));
             const rupeebossCalls = historyData.history.map(h => h.Rupeeboss?.calls || 0);
             const livealthCalls = historyData.history.map(h => h.Livealth_Bio_Pharma?.calls || 0);
+            const saffronstaysCalls = historyData.history.map(h => h.SaffronStays?.calls || 0);
             const rupeebossCost = historyData.history.map(h => parseFloat(h.Rupeeboss?.cost || 0));
             const livealthCost = historyData.history.map(h => parseFloat(h.Livealth_Bio_Pharma?.cost || 0));
+            const saffronstaysCost = historyData.history.map(h => parseFloat(h.SaffronStays?.cost || 0));
             
             const chartOptions = {
                 responsive: true,
@@ -112,6 +114,10 @@
                     const cardClass = name.includes('Livealth') ? 'livealth' : name.includes('Saffron') ? 'saffronstays' : 'rupeeboss';
                     const displayName = name.replace(/_/g, ' ');
                     const icon = cardClass === 'rupeeboss' ? '🏦' : cardClass === 'livealth' ? '💊' : '🏡';
+                    html += `
+                        <div class="agent-card ${cardClass}">
+                            <div class="agent-header">
+                                <span class="agent-icon">${icon}</span>
                                 <div>
                                     <div class="agent-name">${displayName}</div>
                                     <div class="agent-id">${agent.agent_id}</div>
