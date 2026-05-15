@@ -37,7 +37,12 @@
         .updated { text-align: center; margin-top: 15px; color: rgba(255,255,255,0.4); }
         .info-box { background: rgba(16, 185, 129, 0.1); border-radius: 12px; padding: 15px; margin-top: 20px; color: #10b981; font-size: 0.9em; border: 1px solid rgba(16, 185, 129, 0.2); }
         .error-box { background: rgba(239, 68, 68, 0.1); border-radius: 12px; padding: 15px; margin-top: 20px; color: #ef4444; font-size: 0.9em; border: 1px solid rgba(239, 68, 68, 0.2); }
-        .loading { text-align: center; padding: 40px; color: #999; }
+        .prev-day-box { background: rgba(255,255,255,0.03); padding: 15px; border-radius: 12px; margin-top: 15px; border: 1px solid rgba(255,255,255,0.06); }
+        .prev-day-title { font-size: 0.8em; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+        .prev-day-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .prev-day-item { text-align: center; }
+        .prev-day-val { font-size: 1.3em; font-weight: 700; color: rgba(255,255,255,0.7); }
+        .prev-day-lbl { font-size: 0.7em; color: rgba(255,255,255,0.4); text-transform: uppercase; margin-top: 3px; }
         .retry-btn { background: linear-gradient(135deg, #f59e0b, #d97706); color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; margin-top: 15px; font-weight: 600; }
 
         /* History Table Styles */
@@ -160,6 +165,26 @@
             });
         }
         
+        function getPrevDayData(agentName, history) {
+            if (!history || history.length < 2) {
+                return { date: 'N/A', calls: 0, minutes: 0, cost: 0 };
+            }
+            
+            // Sort by date ascending to get chronological order
+            const sorted = [...history].sort((a, b) => a.date.localeCompare(b.date));
+            
+            // Get second-to-last entry (previous day before latest)
+            const prevDay = sorted[sorted.length - 2];
+            
+            const data = prevDay[agentName] || { calls: 0, cost: 0 };
+            return {
+                date: prevDay.date,
+                calls: data.calls || 0,
+                minutes: Math.round((data.calls || 0) * 1.8),
+                cost: parseFloat(data.cost || 0).toFixed(2)
+            };
+        }
+        
         function renderStats(currentData, history) {
             const contentDiv = document.getElementById('content');
             
@@ -170,6 +195,10 @@
                     const cardClass = name.includes('Livealth') ? 'livealth' : name.includes('Saffron') ? 'saffronstays' : 'rupeeboss';
                     const displayName = name.replace(/_/g, ' ');
                     const icon = cardClass === 'rupeeboss' ? '🏦' : cardClass === 'livealth' ? '💊' : '🏡';
+                    
+                    // Get previous day data from history
+                    const prevDay = getPrevDayData(name, history);
+                    
                     html += `
                         <div class="agent-card ${cardClass}">
                             <div class="agent-header">
@@ -191,6 +220,25 @@
                                 <div class="stat-box">
                                     <div class="stat-value">$${parseFloat(agent.cost || 0).toFixed(2)}</div>
                                     <div class="stat-label">Est. Cost</div>
+                                </div>
+                            </div>
+                            
+                            <!-- Previous Day Stats -->
+                            <div class="prev-day-box">
+                                <div class="prev-day-title">📅 Previous Day (${prevDay.date || 'N/A'})</div>
+                                <div class="prev-day-grid">
+                                    <div class="prev-day-item">
+                                        <div class="prev-day-val">${prevDay.calls || 0}</div>
+                                        <div class="prev-day-lbl">Calls</div>
+                                    </div>
+                                    <div class="prev-day-item">
+                                        <div class="prev-day-val">${prevDay.minutes || 0}</div>
+                                        <div class="prev-day-lbl">Minutes</div>
+                                    </div>
+                                    <div class="prev-day-item">
+                                        <div class="prev-day-val">$${parseFloat(prevDay.cost || 0).toFixed(2)}</div>
+                                        <div class="prev-day-lbl">Cost</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

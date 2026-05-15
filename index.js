@@ -1,7 +1,7 @@
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
-    const PAGES_URL = 'https://041be9df.openclaw-dashboard-7vh.pages.dev';
+    const PAGES_URL = 'https://32970d04.openclaw-dashboard-7vh.pages.dev';
     const dashboardUrl = PAGES_URL + url.pathname + url.search;
     
     try {
