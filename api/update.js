@@ -1,6 +1,19 @@
 // Dashboard Update API Endpoint
 export default {
   async fetch(request, env, ctx) {
+    // Handle CORS preflight
+    if (request.method === 'OPTIONS') {
+      return new Response(null, {
+        status: 204,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
+          'Access-Control-Max-Age': '86400'
+        }
+      });
+    }
+    
     // Only allow POST requests
     if (request.method !== 'POST') {
       return new Response(JSON.stringify({
@@ -44,16 +57,17 @@ export default {
           break;
       }
 
-      return new Response(JSON.stringify(result, null, 2), {
+      return new Response(JSON.stringify(result), {
         status: 200,
         headers: {
           'Content-Type': 'application/json',
           'Access-Control-Allow-Origin': '*',
-          'Cache-Control': 'no-cache'
+          'Cache-Control': 'no-cache, no-store, must-revalidate'
         }
       });
 
     } catch (error) {
+      console.error('API Error:', error);
       return new Response(JSON.stringify({
         success: false,
         error: error.message,

@@ -36,6 +36,22 @@
         .total-value { font-size: 2em; font-weight: 800; }
         .updated { text-align: center; margin-top: 15px; color: rgba(255,255,255,0.4); }
         .info-box { background: rgba(16, 185, 129, 0.1); border-radius: 12px; padding: 15px; margin-top: 20px; color: #10b981; font-size: 0.9em; border: 1px solid rgba(16, 185, 129, 0.2); }
+        .error-box { background: rgba(239, 68, 68, 0.1); border-radius: 12px; padding: 15px; margin-top: 20px; color: #ef4444; font-size: 0.9em; border: 1px solid rgba(239, 68, 68, 0.2); }
+        .loading { text-align: center; padding: 40px; color: #999; }
+        .retry-btn { background: linear-gradient(135deg, #f59e0b, #d97706); color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; margin-top: 15px; font-weight: 600; }
+
+        /* History Table Styles */
+        .history-section { margin-top: 30px; }
+        .history-table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        .history-table th { background: rgba(255,255,255,0.08); padding: 12px; text-align: left; font-weight: 600; color: #f59e0b; border-bottom: 2px solid rgba(245, 158, 11, 0.3); font-size: 0.85em; text-transform: uppercase; }
+        .history-table td { padding: 12px; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9em; }
+        .history-table tr:hover { background: rgba(255,255,255,0.03); }
+        .history-table .date-col { color: rgba(255,255,255,0.7); font-weight: 500; }
+        .history-table .calls-col { color: #667eea; font-weight: 600; }
+        .history-table .mins-col { color: #f59e0b; font-weight: 600; }
+        .history-table .cost-col { color: #10b981; font-weight: 600; }
+        .agent-table { margin-bottom: 30px; }
+        .agent-table h3 { color: #fff; margin-bottom: 15px; font-size: 1.2em; display: flex; align-items: center; gap: 10px; }
     </style>
 </head>
 <body>
@@ -60,21 +76,55 @@
     </div>
     
     <!-- Current Stats -->
-    <div id="content"><div style="text-align: center; padding: 40px; color: #999;">Loading...</div></div>
+    <div id="content"><div class="loading">Loading data...</div></div>
 
     <script>
-        Promise.all([
-            fetch('elevenlabs_costs.json').then(r => r.json()),
-            fetch('elevenlabs_history.json').then(r => r.json()).catch(() => ({history: []}))
-        ]).then(([currentData, historyData]) => {
-            // Charts
-            const labels = historyData.history.map(h => h.date.split('-').slice(1).join('/'));
-            const rupeebossCalls = historyData.history.map(h => h.Rupeeboss?.calls || 0);
-            const livealthCalls = historyData.history.map(h => h.Livealth_Bio_Pharma?.calls || 0);
-            const saffronstaysCalls = historyData.history.map(h => h.SaffronStays?.calls || 0);
-            const rupeebossCost = historyData.history.map(h => parseFloat(h.Rupeeboss?.cost || 0));
-            const livealthCost = historyData.history.map(h => parseFloat(h.Livealth_Bio_Pharma?.cost || 0));
-            const saffronstaysCost = historyData.history.map(h => parseFloat(h.SaffronStays?.cost || 0));
+        let callsChart = null;
+        let costChart = null;
+        let historyCache = null;
+        
+        function loadData() {
+            const contentDiv = document.getElementById('content');
+            
+            Promise.all([
+                fetch('elevenlabs_costs.json').then(r => {
+                    if (!r.ok) throw new Error('Failed to load costs data: ' + r.status);
+                    return r.json();
+                }),
+                fetch('elevenlabs_history.json').then(r => {
+                    if (!r.ok) throw new Error('Failed to load history data: ' + r.status);
+                    return r.json();
+                }).catch(() => ({history: []}))
+            ]).then(([currentData, historyData]) => {
+                historyCache = historyData.history || [];
+                renderCharts(historyData);
+                renderStats(currentData, historyCache);
+            }).catch(error => {
+                console.error('Error loading data:', error);
+                contentDiv.innerHTML = `
+                    <div class="error-box">
+                        <strong>❌ Error loading data:</strong> ${error.message}<br>
+                        <button class="retry-btn" onclick="loadData()">🔄 Retry</button>
+                    </div>
+                `;
+            });
+        }
+        
+        function renderCharts(historyData) {
+            const history = historyData.history || [];
+            
+            if (history.length === 0) {
+                console.log('No history data available');
+                return;
+            }
+            
+            const labels = history.map(h => h.date.split('-').slice(1).join('/'));
+            const rupeebossCalls = history.map(h => h.Rupeeboss?.calls || 0);
+            const livealthCalls = history.map(h => h.Livealth_Bio_Pharma?.calls || 0);
+            const saffronstaysCalls = history.map(h => h.SaffronStays?.calls || 0);
+            const rupeebossCost = history.map(h => parseFloat(h.Rupeeboss?.cost || 0));
+            const livealthCost = history.map(h => parseFloat(h.Livealth_Bio_Pharma?.cost || 0));
+            const saffronstaysCost = history.map(h => parseFloat(h.SaffronStays?.cost || 0));
             
             const chartOptions = {
                 responsive: true,
@@ -86,7 +136,10 @@
                 }
             };
             
-            new Chart(document.getElementById('callsChart'), {
+            if (callsChart) callsChart.destroy();
+            if (costChart) costChart.destroy();
+            
+            callsChart = new Chart(document.getElementById('callsChart'), {
                 type: 'bar',
                 data: { labels, datasets: [
                     { label: 'Rupeeboss', data: rupeebossCalls, backgroundColor: '#667eea', borderRadius: 8 },
@@ -96,7 +149,7 @@
                 options: { ...chartOptions, scales: { ...chartOptions.scales, y: { ...chartOptions.scales.y, beginAtZero: true } } }
             });
             
-            new Chart(document.getElementById('costChart'), {
+            costChart = new Chart(document.getElementById('costChart'), {
                 type: 'line',
                 data: { labels, datasets: [
                     { label: 'Rupeeboss', data: rupeebossCost, borderColor: '#667eea', backgroundColor: 'rgba(102, 126, 234, 0.1)', fill: true, tension: 0.3 },
@@ -105,8 +158,11 @@
                 ]},
                 options: { ...chartOptions, scales: { ...chartOptions.scales, y: { ...chartOptions.scales.y, beginAtZero: true, ticks: { callback: v => '$' + v.toFixed(2) } } } }
             });
+        }
+        
+        function renderStats(currentData, history) {
+            const contentDiv = document.getElementById('content');
             
-            // Agent Cards
             let html = '<div class="section"><h2>🎯 Current Stats</h2>';
             
             if (currentData.agents) {
@@ -120,20 +176,20 @@
                                 <span class="agent-icon">${icon}</span>
                                 <div>
                                     <div class="agent-name">${displayName}</div>
-                                    <div class="agent-id">${agent.agent_id}</div>
+                                    <div class="agent-id">${agent.agent_id || 'N/A'}</div>
                                 </div>
                             </div>
                             <div class="stats-grid">
                                 <div class="stat-box">
-                                    <div class="stat-value">${agent.calls}</div>
+                                    <div class="stat-value">${agent.calls || 0}</div>
                                     <div class="stat-label">Calls (7 days)</div>
                                 </div>
                                 <div class="stat-box">
-                                    <div class="stat-value">${agent.minutes}</div>
+                                    <div class="stat-value">${agent.minutes || 0}</div>
                                     <div class="stat-label">Est. Minutes</div>
                                 </div>
                                 <div class="stat-box">
-                                    <div class="stat-value">$${parseFloat(agent.cost).toFixed(2)}</div>
+                                    <div class="stat-value">$${parseFloat(agent.cost || 0).toFixed(2)}</div>
                                     <div class="stat-label">Est. Cost</div>
                                 </div>
                             </div>
@@ -146,7 +202,7 @@
                 html += `
                     <div class="total-bar">
                         <span class="total-label">💰 Total Estimated Cost</span>
-                        <span class="total-value">$${parseFloat(currentData.totals.cost).toFixed(2)}</span>
+                        <span class="total-value">$${parseFloat(currentData.totals.cost || 0).toFixed(2)}</span>
                     </div>
                 `;
             }
@@ -160,9 +216,117 @@
                     <strong>ℹ️ Note:</strong> These are Estimated Costs. Tracking up to 30 days of history.
                 </div>
             </div>`;
+
+            // Add History Tables Section
+            html += '<div class="section history-section"><h2>📜 Previous Days History</h2>';
             
-            document.getElementById('content').innerHTML = html;
-        });
+            if (history && history.length > 0) {
+                // Sort history by date descending (latest first)
+                const sortedHistory = [...history].reverse();
+                
+                // Rupeeboss History Table
+                html += `
+                    <div class="agent-table">
+                        <h3>🏦 Rupeeboss</h3>
+                        <table class="history-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Calls</th>
+                                    <th>Minutes</th>
+                                    <th>Cost</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${sortedHistory.map(h => {
+                                    const data = h.Rupeeboss || { calls: 0, cost: 0 };
+                                    const mins = Math.round((data.calls || 0) * 1.8);
+                                    return `
+                                        <tr>
+                                            <td class="date-col">${h.date}</td>
+                                            <td class="calls-col">${data.calls || 0}</td>
+                                            <td class="mins-col">${mins}</td>
+                                            <td class="cost-col">$${parseFloat(data.cost || 0).toFixed(2)}</td>
+                                        </tr>
+                                    `;
+                                }).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+
+                // Livealth History Table
+                html += `
+                    <div class="agent-table">
+                        <h3>💊 Livealth Bio Pharma</h3>
+                        <table class="history-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Calls</th>
+                                    <th>Minutes</th>
+                                    <th>Cost</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${sortedHistory.map(h => {
+                                    const data = h.Livealth_Bio_Pharma || { calls: 0, cost: 0 };
+                                    const mins = Math.round((data.calls || 0) * 1.8);
+                                    return `
+                                        <tr>
+                                            <td class="date-col">${h.date}</td>
+                                            <td class="calls-col">${data.calls || 0}</td>
+                                            <td class="mins-col">${mins}</td>
+                                            <td class="cost-col">$${parseFloat(data.cost || 0).toFixed(2)}</td>
+                                        </tr>
+                                    `;
+                                }).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+
+                // SaffronStays History Table
+                html += `
+                    <div class="agent-table">
+                        <h3>🏡 SaffronStays</h3>
+                        <table class="history-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Calls</th>
+                                    <th>Minutes</th>
+                                    <th>Cost</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${sortedHistory.map(h => {
+                                    const data = h.SaffronStays || { calls: 0, cost: 0 };
+                                    const mins = Math.round((data.calls || 0) * 1.8);
+                                    return `
+                                        <tr>
+                                            <td class="date-col">${h.date}</td>
+                                            <td class="calls-col">${data.calls || 0}</td>
+                                            <td class="mins-col">${mins}</td>
+                                            <td class="cost-col">$${parseFloat(data.cost || 0).toFixed(2)}</td>
+                                        </tr>
+                                    `;
+                                }).join('')}
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+            } else {
+                html += '<p style="color: rgba(255,255,255,0.5); text-align: center;">No historical data available yet.</p>';
+            }
+            
+            html += '</div>';
+            
+            contentDiv.innerHTML = html;
+        }
+        
+        // Load data on page load
+        loadData();
     </script>
 </body>
 </html>

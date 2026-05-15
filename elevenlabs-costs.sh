@@ -15,25 +15,46 @@ AGENTS["Livealth_Bio_Pharma"]="agent_7601k8ms1yhqf19tk684c03bfbst|eb2ad9409c505c
 BASE_URL="https://api.elevenlabs.io/v1/convai"
 RATE_PER_MINUTE=0.08
 
-# Get agent stats
+# Get agent stats from conversations
 get_agent_stats() {
     local agent_id="$1"
     local api_key="$2"
     
-    local response=$(curl -s --compressed -X GET \
+    local response=$(curl -s --compressed \
         -H "xi-api-key: $api_key" \
         -H "Content-Type: application/json" \
-        "${BASE_URL}/agents" 2>/dev/null)
+        "${BASE_URL}/conversations?agent_id=${agent_id}" 2>/dev/null)
     
-    local calls=$(echo "$response" | jq -r --arg id "$agent_id" \
-        '.agents[] | select(.agent_id == $id) | .last_7_day_call_count // 0')
+    # Count conversations and total duration
+    local calls=$(echo "$response" | python3 -c "
+import json, sys
+data = json.load(sys.stdin)
+convs = data.get('conversations', [])
+print(len(convs))
+" 2>/dev/null || echo "0")
     
-    [ -z "$calls" ] || [ "$calls" = "null" ] && calls="0"
+    local total_secs=$(echo "$response" | python3 -c "
+import json, sys
+data = json.load(sys.stdin)
+convs = data.get('conversations', [])
+total = sum(c.get('call_duration_secs', 0) for c in convs)
+print(total)
+" 2>/dev/null || echo "0")
     
-    local minutes=$((calls * 2))
-    local cost=$(echo "scale=4; $minutes * $RATE_PER_MINUTE" | bc 2>/dev/null || echo "0.0000")
+    local minutes=$((total_secs / 60))
+    local cost=$(python3 -c "print(f'{($minutes * 0.08):.2f}')" 2>/dev/null || echo "0.00")
     
     echo "$calls|$cost|$minutes"
+}
+
+# Format number with leading zero
+format_num() {
+    local num="$1"
+    if [[ "$num" == .* ]]; then
+        echo "0$num"
+    else
+        echo "$num"
+    fi
 }
 
 # Main
@@ -47,18 +68,18 @@ livealth_stats=$(get_agent_stats "agent_7601k8ms1yhqf19tk684c03bfbst" "eb2ad9409
 
 # Parse stats
 rupeeboss_calls=$(echo "$rupeeboss_stats" | cut -d'|' -f1)
-rupeeboss_cost=$(echo "$rupeeboss_stats" | cut -d'|' -f2)
+rupeeboss_cost=$(format_num "$(echo "$rupeeboss_stats" | cut -d'|' -f2)")
 rupeeboss_minutes=$(echo "$rupeeboss_stats" | cut -d'|' -f3)
 
 livealth_calls=$(echo "$livealth_stats" | cut -d'|' -f1)
-livealth_cost=$(echo "$livealth_stats" | cut -d'|' -f2)
+livealth_cost=$(format_num "$(echo "$livealth_stats" | cut -d'|' -f2)")
 livealth_minutes=$(echo "$livealth_stats" | cut -d'|' -f3)
 
 # Calculate totals
 total_calls=$((rupeeboss_calls + livealth_calls))
-total_cost=$(echo "scale=4; $rupeeboss_cost + $livealth_cost" | bc)
+total_cost=$(python3 -c "print(f'{(float('$rupeeboss_cost') + float('$livealth_cost')):.2f}')")
 
-# Build JSON
+# Build JSON with proper number formatting
 cat > "$DATA_FILE" << EOF
 {
   "last_updated": "$CURRENT_TIME",
