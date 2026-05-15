@@ -3833,3 +3833,5 @@ After doing this, you may fix the identity used for this commit with:
 To https://github.com/kamatanuj/openclaw-dashboard.git
    708e816..bcf4b0d  main -> main
 🚀 ElevenLabs costs pushed to GitHub
+[2026-05-15T06:00:56] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
