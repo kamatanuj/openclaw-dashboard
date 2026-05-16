@@ -4763,3 +4763,10 @@ After doing this, you may fix the identity used for this commit with:
 To https://github.com/kamatanuj/openclaw-dashboard.git
    6d6acc1..c6a32f5  main -> main
 🚀 ElevenLabs costs pushed to GitHub
+[2026-05-16T20:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 19 entries
+=== D-insights Stats ===
+Rupeeboss: 30 calls, $4.80, 60 min
+Livealth: 30 calls, $6.32, 79 min
+Total: 60 calls, $11.12
