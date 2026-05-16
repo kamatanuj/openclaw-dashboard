@@ -201,6 +201,17 @@
         "calls": 17,
         "cost": 3.77
       }
+    },
+    {
+      "date": "2026-05-16",
+      "Rupeeboss": {
+        "calls": 30,
+        "cost": 4.24
+      },
+      "Livealth_Bio_Pharma": {
+        "calls": 30,
+        "cost": 6.32
+      }
     }
   ]
 }
