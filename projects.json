@@ -4,7 +4,7 @@
       "name": "SaffronStays Voice Agent",
       "status": "Live",
       "start_date": "2026-05-13",
-      "last_update": "2026-05-15",
+      "last_update": "2026-05-17",
       "description": "Luxury villa booking voice agent with 13 tools. 17 leads captured. CRM: https://saffronstays-crm.pages.dev | API: https://saffronstays-api.kamatanuj.workers.dev",
       "url": "https://saffronstays-crm.pages.dev"
     },
@@ -12,7 +12,7 @@
       "name": "Service Reminder System",
       "status": "Live",
       "start_date": "2026-05-13",
-      "last_update": "2026-05-13",
+      "last_update": "2026-05-17",
       "description": "Automated service reminders with booking system. MongoDB backend, SendGrid emails, Google Calendar. URL: https://service-reminder.kamatanuj.workers.dev",
       "url": "https://service-reminder.kamatanuj.workers.dev"
     },
@@ -20,14 +20,14 @@
       "name": "Livealth CRM",
       "status": "Live",
       "start_date": "2026-04-29",
-      "last_update": "2026-05-10",
+      "last_update": "2026-05-17",
       "description": "Lead management dashboard. 67 leads auto-updated hourly. URL: https://livealth-crm.pages.dev"
     },
     {
       "name": "Rupeeboss CRM",
       "status": "Live",
       "start_date": "2026-04-29",
-      "last_update": "2026-05-10",
+      "last_update": "2026-05-17",
       "description": "Lead management for Rupeeboss voice agent. 174 leads with transcripts/summaries. URL: https://rupeeboss-crm.pages.dev",
       "url": "https://rupeeboss-crm.pages.dev"
     },
@@ -35,14 +35,14 @@
       "name": "OpenClaw Dashboard",
       "status": "Live",
       "start_date": "2026-05-10",
-      "last_update": "2026-05-15",
+      "last_update": "2026-05-17",
       "description": "Real-time monitoring dashboard for OpenClaw. URL: https://openclaw-dashboard.kamatanuj.workers.dev"
     },
     {
       "name": "Daily AI News Digest",
       "status": "Live",
       "start_date": "2026-04-25",
-      "last_update": "2026-05-10",
+      "last_update": "2026-05-17",
       "description": "Automated LinkedIn/Telegram posting with image support"
     },
     {
