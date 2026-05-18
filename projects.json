@@ -1,6 +1,14 @@
 {
   "projects": [
     {
+      "name": "StayVista Voice Agent",
+      "status": "Live",
+      "start_date": "2026-05-18",
+      "last_update": "2026-05-18",
+      "description": "StayVista AI voice agent with 8 tools for villa booking. 86+ locations, 1000+ villas. CRM: https://stayvista-crm.pages.dev | Agent: agent_2401krx9j08jecb926brv5rhc2ab",
+      "url": "https://stayvista-crm.pages.dev"
+    },
+    {
       "name": "SaffronStays Voice Agent",
       "status": "Live",
       "start_date": "2026-05-13",
