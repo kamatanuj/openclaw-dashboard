@@ -1,9 +1,9 @@
 {
-  "last_updated": "2026-05-19T08:00:01",
+  "last_updated": "2026-05-19T08:30:00",
   "today": "2026-05-19",
   "agents": {
-    "Rupeeboss": {"agent_id": "gKNyAo0UhrdRiQ7FAWVZ", "calls": 30, "cost": 4.64, "minutes": 58},
+    "Rupeeboss": {"agent_id": "gKNyAo0UhrdRiQ7FAWVZ", "calls": 30, "cost": 5.20, "minutes": 65},
     "Livealth_Bio_Pharma": {"agent_id": "agent_7601k8ms1yhqf19tk684c03bfbst", "calls": 30, "cost": 6.56, "minutes": 82}
   },
-  "totals": {"calls": 60, "cost": 11.20}
+  "totals": {"calls": 60, "cost": 11.76}
 }
