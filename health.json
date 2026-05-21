@@ -6,6 +6,6 @@
   "gateway_running": "yes",
   "health_score": 100,
   "status": "good",
-  "timestamp": "2026-05-21T01:30:01+00:00",
-  "date": "2026-05-21"
+  "timestamp": "$(date -u +%Y-%m-%dT%H:%M:%S+00:00)",
+  "date": "$(date +%Y-%m-%d)"
 }
