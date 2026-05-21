@@ -4,16 +4,16 @@
       "name": "StayVista Voice Agent",
       "status": "Live",
       "start_date": "2026-05-18",
-      "last_update": "2026-05-18",
-      "description": "StayVista AI voice agent with 8 tools for villa booking. 86+ locations, 1000+ villas. CRM: https://stayvista-crm.pages.dev | Agent: agent_2401krx9j08jecb926brv5rhc2ab",
+      "last_update": "2026-05-21",
+      "description": "StayVista AI voice agent with 8 tools for villa booking. 86+ locations, 1000+ villas. CRM: https://stayvista-crm.pages.dev | Agent: agent_2401krx9j08jecb926brv5rhc2ab | API: https://stayvista-api.kamatanuj.workers.dev",
       "url": "https://stayvista-crm.pages.dev"
     },
     {
       "name": "SaffronStays Voice Agent",
       "status": "Live",
       "start_date": "2026-05-13",
-      "last_update": "2026-05-17",
-      "description": "Luxury villa booking voice agent with 13 tools. 17 leads captured. CRM: https://saffronstays-crm.pages.dev | API: https://saffronstays-api.kamatanuj.workers.dev",
+      "last_update": "2026-05-21",
+      "description": "Luxury villa booking voice agent with 13 tools. 20 leads captured (16 HOT, 4 NEW). CRM: https://saffronstays-crm.pages.dev | API: https://saffronstays-api.kamatanuj.workers.dev | 20 conversations processed",
       "url": "https://saffronstays-crm.pages.dev"
     },
     {
@@ -28,30 +28,30 @@
       "name": "Livealth CRM",
       "status": "Live",
       "start_date": "2026-04-29",
-      "last_update": "2026-05-17",
-      "description": "Lead management dashboard. 67 leads auto-updated hourly. URL: https://livealth-crm.pages.dev"
+      "last_update": "2026-05-21",
+      "description": "Lead management dashboard. 67 leads. URL: https://livealth-crm.pages.dev | Voice agent active"
     },
     {
       "name": "Rupeeboss CRM",
       "status": "Live",
       "start_date": "2026-04-29",
-      "last_update": "2026-05-17",
-      "description": "Lead management for Rupeeboss voice agent. 174 leads with transcripts/summaries. URL: https://rupeeboss-crm.pages.dev",
+      "last_update": "2026-05-21",
+      "description": "Lead management for Rupeeboss voice agent. 179 leads with transcripts/summaries. URL: https://rupeeboss-crm.pages.dev",
       "url": "https://rupeeboss-crm.pages.dev"
     },
     {
       "name": "OpenClaw Dashboard",
       "status": "Live",
       "start_date": "2026-05-10",
-      "last_update": "2026-05-17",
-      "description": "Real-time monitoring dashboard for OpenClaw. URL: https://openclaw-dashboard.kamatanuj.workers.dev"
+      "last_update": "2026-05-21",
+      "description": "Real-time monitoring dashboard for OpenClaw. URL: https://openclaw-dashboard.kamatanuj.workers.dev | Voice agents widget + cost tracking"
     },
     {
       "name": "Daily AI News Digest",
       "status": "Live",
       "start_date": "2026-04-25",
-      "last_update": "2026-05-17",
-      "description": "Automated LinkedIn/Telegram posting with image support"
+      "last_update": "2026-05-21",
+      "description": "Automated LinkedIn/Telegram posting with image support. Daily at 07:05 IST"
     },
     {
       "name": "Printastick Website",
