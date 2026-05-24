@@ -1,6 +1,36 @@
 {
   "costs": [
     {
+      "date": "2026-05-24",
+      "models": [
+        {
+          "model": "ollama/gemma3:12b",
+          "cost_per_1k": 0.0,
+          "calls": 49,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/google/gemma-3-12b-it:free",
+          "cost_per_1k": 0.0,
+          "calls": 46,
+          "cost": 0.0
+        },
+        {
+          "model": "openrouter/tencent/hy3-preview:free",
+          "cost_per_1k": 0.0,
+          "calls": 42,
+          "cost": 0.0
+        },
+        {
+          "model": "ollama/kimi-k2.6:cloud",
+          "cost_per_1k": 0.0,
+          "calls": 59,
+          "cost": 0.0
+        }
+      ],
+      "total_cost": 0.0
+    },
+    {
       "date": "2026-05-23",
       "models": [
         {
