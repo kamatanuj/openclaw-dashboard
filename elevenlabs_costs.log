@@ -9649,3 +9649,28 @@ History: 27 entries
 Rupeeboss: 30 calls, $5.36, 67 min
 Livealth: 30 calls, $6.16, 77 min
 Total: 60 calls, $11.52
+[main 2581b4d] Auto-update: ElevenLabs costs 2026-05-24 23:00 UTC
+ Committer: root <root@srv1322534.hstgr.cloud>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 2 files changed, 26 insertions(+), 1 deletion(-)
+To https://github.com/kamatanuj/openclaw-dashboard.git
+   6428f27..2581b4d  main -> main
+🚀 ElevenLabs costs pushed to GitHub
+[2026-05-25T00:00:01] Polling D-insights...
+Data saved: /root/.openclaw/workspace/dashboard/elevenlabs_costs.json
+History: 28 entries
+=== D-insights Stats ===
+Rupeeboss: 30 calls, $5.36, 67 min
+Livealth: 30 calls, $6.16, 77 min
+Total: 60 calls, $11.52
