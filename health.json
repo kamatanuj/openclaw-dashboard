@@ -1,11 +1,11 @@
 {
   "hostname": "srv1322534",
-  "uptime": "up 1 week, 21 hours, 5 minutes",
+  "uptime": "up 1 week, 1 day, 9 hours, 5 minutes",
   "disk_usage": 47,
-  "memory_usage": "13",
+  "memory_usage": "12",
   "gateway_running": "yes",
   "health_score": 100,
   "status": "good",
-  "timestamp": "2026-05-26T13:30:01+00:00",
-  "date": "2026-05-26"
+  "timestamp": "2026-05-27T01:30:01+00:00",
+  "date": "2026-05-27"
 }
