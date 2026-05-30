@@ -1,17 +1,6 @@
 {
   "history": [
     {
-      "date": "2026-04-29",
-      "Rupeeboss": {
-        "calls": 16,
-        "cost": 2.56
-      },
-      "Livealth_Bio_Pharma": {
-        "calls": 21,
-        "cost": 3.36
-      }
-    },
-    {
       "date": "2026-04-30",
       "Rupeeboss": {
         "calls": 11,
@@ -325,6 +314,17 @@
     },
     {
       "date": "2026-05-29",
+      "Rupeeboss": {
+        "calls": 30,
+        "cost": 5.36
+      },
+      "Livealth_Bio_Pharma": {
+        "calls": 30,
+        "cost": 5.92
+      }
+    },
+    {
+      "date": "2026-05-30",
       "Rupeeboss": {
         "calls": 30,
         "cost": 5.36
